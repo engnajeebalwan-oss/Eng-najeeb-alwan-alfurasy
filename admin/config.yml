@@ -1,3 +1,4 @@
+
 backend:
   name: github
   repo: engnajeebalwan-oss/Eng-najeeb-alwan-alfurasy
@@ -7,6 +8,7 @@ backend:
 
 locale: ar
 site_url: https://engnajeeb.netlify.app
+
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
@@ -27,6 +29,7 @@ collections:
           - { label: "عنوان النبذة المهنية", name: "about_heading", widget: "string" }
           - { label: "ملخص النبذة المهنية", name: "about_summary", widget: "text" }
           - { label: "التوجه المهني", name: "about_focus", widget: "text" }
+
           - label: "المؤهلات العلمية"
             name: "education"
             widget: "object"
@@ -35,6 +38,7 @@ collections:
               - { label: "الجامعة", name: "university", widget: "string" }
               - { label: "سنة التخرج", name: "graduation_year", widget: "string" }
               - { label: "التقدير", name: "grade", widget: "string" }
+
           - label: "الخدمات الهندسية"
             name: "services"
             widget: "list"
@@ -43,6 +47,7 @@ collections:
               - { label: "الرمز", name: "icon", widget: "string", required: false }
               - { label: "اسم الخدمة", name: "title", widget: "string" }
               - { label: "وصف الخدمة", name: "description", widget: "text" }
+
           - label: "المشاريع والأعمال"
             name: "projects"
             widget: "list"
@@ -53,12 +58,37 @@ collections:
               - { label: "نوع العمل", name: "category", widget: "string", required: false }
               - { label: "وصف مختصر", name: "description", widget: "text", required: false }
               - { label: "صورة المشروع", name: "image", widget: "image", required: false }
-              - { label: "ملف PDF للمشروع", name: "pdf_file", widget: "file", required: false, media_folder: "files/projects", public_folder: "/files/projects" }
-- { label: "ملف AutoCAD (DWG أو DXF)", name: "cad_file", widget: "file", required: false, media_folder: "files/projects", public_folder: "/files/projects" }
+
+              - label: "ملفات PDF للمشروع"
+                name: "pdf_files"
+                widget: "list"
+                required: false
+                field:
+                  label: "ملف PDF"
+                  name: "file"
+                  widget: "file"
+                  media_folder: "files/projects/pdf"
+                  public_folder: "/files/projects/pdf"
+
+              - label: "ملفات AutoCAD (DWG وDXF)"
+                name: "cad_files"
+                widget: "list"
+                required: false
+                field:
+                  label: "ملف AutoCAD"
+                  name: "file"
+                  widget: "file"
+                  media_folder: "files/projects/cad"
+                  public_folder: "/files/projects/cad"
+
           - label: "البرامج الهندسية"
             name: "software"
             widget: "list"
-            field: { label: "اسم البرنامج", name: "software_name", widget: "string" }
+            field:
+              label: "اسم البرنامج"
+              name: "software_name"
+              widget: "string"
+
           - label: "بيانات التواصل"
             name: "contact"
             widget: "object"
