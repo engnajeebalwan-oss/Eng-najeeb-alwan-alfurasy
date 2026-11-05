@@ -53,6 +53,8 @@ collections:
               - { label: "نوع العمل", name: "category", widget: "string", required: false }
               - { label: "وصف مختصر", name: "description", widget: "text", required: false }
               - { label: "صورة المشروع", name: "image", widget: "image", required: false }
+              - { label: "ملف PDF للمشروع", name: "pdf_file", widget: "file", required: false, media_folder: "files/projects", public_folder: "/files/projects" }
+- { label: "ملف AutoCAD (DWG أو DXF)", name: "cad_file", widget: "file", required: false, media_folder: "files/projects", public_folder: "/files/projects" }
           - label: "البرامج الهندسية"
             name: "software"
             widget: "list"
