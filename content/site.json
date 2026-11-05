@@ -28,10 +28,10 @@
   "section_visibility": {
     "about": true,
     "services": true,
-    "portfolio": true,
-    "tools": true,
+    "portfolio": false,
+    "tools": false,
     "contact": true,
-    "social": true
+    "social": false
   },
   "about": {
     "heading": "مهندس مدني - إنشائي",
@@ -63,7 +63,7 @@
       ]
     }
   ],
-  "personal_image": "/images/uploads/1000011669.jpg",
+  "personal_image": "/images/uploads/1000011901.jpg",
   "services": [
     {
       "icon": "⌂",
