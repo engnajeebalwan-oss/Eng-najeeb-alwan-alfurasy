@@ -3,10 +3,156 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>إدارة الموقع | المهندس نجيب الفراصي</title>
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#142536">
+  <title>إدارة الموقع | المهندس نجيب الفراصي</title>
+  <style>
+    /* زر إضافي يظهر داخل لوحة الوسائط لفتح متصفح ملفات الهاتف */
+    #phone-files-choice{
+      position:fixed;z-index:2147483000;left:16px;bottom:18px;
+      border:0;border-radius:10px;padding:12px 16px;
+      background:#176b45;color:#fff;font:700 14px Tahoma,Arial,sans-serif;
+      box-shadow:0 5px 22px #0005;cursor:pointer;display:none;
+    }
+    #phone-files-choice:focus{outline:3px solid #9ce6bd;outline-offset:2px}
+    #phone-files-hint{
+      position:fixed;z-index:2147483000;left:16px;bottom:68px;
+      max-width:min(290px,calc(100vw - 32px));padding:8px 11px;
+      border-radius:8px;background:#142536;color:#fff;
+      font:12px/1.6 Tahoma,Arial,sans-serif;box-shadow:0 4px 16px #0004;
+      display:none
+    }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <div id="phone-files-hint">للاختيار من ذاكرة الهاتف، استخدم هذا الزر. سيُقبل رفع الصور فقط.</div>
+  <button id="phone-files-choice" type="button">📁 اختيار صورة من ملفات الهاتف</button>
+  <script>
+  (function () {
+    'use strict';
+
+    var button = document.getElementById('phone-files-choice');
+    var hint = document.getElementById('phone-files-hint');
+    var currentInput = null;
+    var originalAccept = null;
+    var allowFileManager = false;
+    var observer = null;
+
+    var imageExtensions = /\.(jpe?g|png|gif|webp|bmp|tiff?|svg|avif|heic|heif)$/i;
+
+    function isImageFile(file) {
+      if (!file) return false;
+      return (file.type && file.type.toLowerCase().indexOf('image/') === 0) ||
+             imageExtensions.test(file.name || '');
+    }
+
+    function getFileInputs() {
+      return Array.prototype.slice.call(document.querySelectorAll('input[type="file"]'));
+    }
+
+    function mediaDialogIsOpen() {
+      var dialogs = document.querySelectorAll(
+        '[role="dialog"], [aria-modal="true"], .ReactModal__Content, .nc-modal'
+      );
+      if (dialogs.length) {
+        for (var i = 0; i < dialogs.length; i++) {
+          var box = dialogs[i].getBoundingClientRect();
+          if (box.width > 0 && box.height > 0) return true;
+        }
+      }
+      return false;
+    }
+
+    function refreshButton() {
+      var inputs = getFileInputs();
+      var hasImageInput = inputs.some(function (input) {
+        var accept = (input.getAttribute('accept') || '').toLowerCase();
+        return !accept || accept.indexOf('image') !== -1 || accept.indexOf('*/*') !== -1;
+      });
+
+      var show = hasImageInput && mediaDialogIsOpen();
+      var nextDisplay = show ? 'block' : 'none';
+      if (button.style.display !== nextDisplay) button.style.display = nextDisplay;
+      if (hint.style.display !== nextDisplay) hint.style.display = nextDisplay;
+    }
+
+    button.addEventListener('click', function () {
+      var inputs = getFileInputs();
+      currentInput = inputs.length ? inputs[inputs.length - 1] : null;
+
+      if (!currentInput) {
+        alert('لم أتمكن من العثور على نافذة رفع الصور. أغلق نافذة الوسائط وافتحها مجدداً ثم حاول.');
+        return;
+      }
+
+      originalAccept = currentInput.getAttribute('accept');
+      allowFileManager = true;
+
+      /* قبول جميع الملفات مؤقتاً يجعل أندرويد يعرض متصفح الملفات،
+         ثم نتحقق من أن الملف المختار صورة قبل أن يستلمه Decap CMS. */
+      currentInput.removeAttribute('capture');
+      currentInput.setAttribute('accept', '*/*');
+
+      try {
+        currentInput.click();
+      } catch (error) {
+        allowFileManager = false;
+        if (originalAccept === null) currentInput.removeAttribute('accept');
+        else currentInput.setAttribute('accept', originalAccept);
+        alert('تعذر فتح ملفات الهاتف من هذه النافذة. جرّب زر Upload المعتاد.');
+      }
+    });
+
+    document.addEventListener('change', function (event) {
+      var input = event.target;
+      if (!allowFileManager || !currentInput || input !== currentInput) return;
+
+      var files = input.files ? Array.prototype.slice.call(input.files) : [];
+      var invalid = files.filter(function (file) { return !isImageFile(file); });
+
+      if (invalid.length) {
+        event.stopImmediatePropagation();
+        event.preventDefault();
+        input.value = '';
+        alert('الملف المحدد ليس صورة مدعومة. اختر صورة بصيغة JPG أو PNG أو WEBP أو GIF أو BMP أو SVG.');
+      }
+
+      if (originalAccept === null) input.removeAttribute('accept');
+      else input.setAttribute('accept', originalAccept);
+
+      allowFileManager = false;
+      currentInput = null;
+      originalAccept = null;
+    }, true);
+
+    document.addEventListener('cancel', function (event) {
+      if (!allowFileManager || event.target !== currentInput) return;
+      if (originalAccept === null) currentInput.removeAttribute('accept');
+      else currentInput.setAttribute('accept', originalAccept);
+      allowFileManager = false;
+      currentInput = null;
+      originalAccept = null;
+    }, true);
+
+    observer = new MutationObserver(refreshButton);
+    observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'accept'] });
+    window.addEventListener('resize', refreshButton);
+    window.addEventListener('load', refreshButton);
+    window.addEventListener('focus', function () {
+      window.setTimeout(function () {
+        if (allowFileManager && currentInput) {
+          if (originalAccept === null) currentInput.removeAttribute('accept');
+          else currentInput.setAttribute('accept', originalAccept);
+          allowFileManager = false;
+          currentInput = null;
+          originalAccept = null;
+        }
+        refreshButton();
+      }, 500);
+    });
+    refreshButton();
+  })();
+  </script>
 </body>
 </html>
