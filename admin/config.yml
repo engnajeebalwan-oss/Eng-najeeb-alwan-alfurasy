@@ -20,29 +20,31 @@ collections:
         format: "json"
         fields:
           - { label: "الاسم المهني", name: "name", widget: "string" }
-          - { label: "عنوان الموقع", name: "site_title", widget: "string" }
+          - { label: "عنوان الموقع", name: "site_title", widget: "string", required: false }
           - { label: "الصورة الشخصية", name: "personal_image", widget: "image", required: false }
           - { label: "الشعار الهندسي", name: "engineering_logo", widget: "image", required: false }
-          - { label: "العبارة التعريفية", name: "eyebrow", widget: "string" }
-          - { label: "نبذة الواجهة الرئيسية", name: "hero_intro", widget: "text" }
-          - { label: "الموقع الجغرافي", name: "location", widget: "string" }
+          - { label: "العبارة التعريفية", name: "eyebrow", widget: "string", required: false }
+          - { label: "نبذة الواجهة الرئيسية", name: "hero_intro", widget: "text", required: false }
+          - { label: "الموقع الجغرافي", name: "location", widget: "string", required: false }
 
           - label: "النبذة المهنية"
             name: "about"
             widget: "object"
+            required: false
             fields:
-              - { label: "عنوان النبذة", name: "heading", widget: "string" }
-              - { label: "ملخص النبذة", name: "summary", widget: "text" }
-              - { label: "التوجه المهني", name: "focus", widget: "text" }
+              - { label: "عنوان النبذة", name: "heading", widget: "string", required: false }
+              - { label: "ملخص النبذة", name: "summary", widget: "text", required: false }
+              - { label: "التوجه المهني", name: "focus", widget: "text", required: false }
 
           - label: "المؤهلات العلمية"
             name: "education"
             widget: "object"
+            required: false
             fields:
-              - { label: "المؤهل", name: "degree", widget: "string" }
-              - { label: "الجامعة", name: "university", widget: "string" }
-              - { label: "سنة التخرج", name: "graduation_year", widget: "string" }
-              - { label: "التقدير", name: "grade", widget: "string" }
+              - { label: "المؤهل", name: "degree", widget: "string", required: false }
+              - { label: "الجامعة", name: "university", widget: "string", required: false }
+              - { label: "سنة التخرج", name: "graduation_year", widget: "string", required: false }
+              - { label: "التقدير", name: "grade", widget: "string", required: false }
 
           - label: "الخدمات الهندسية"
             name: "services"
@@ -52,7 +54,7 @@ collections:
             fields:
               - { label: "الأيقونة", name: "icon", widget: "string", required: false }
               - { label: "اسم الخدمة", name: "title", widget: "string" }
-              - { label: "وصف الخدمة", name: "description", widget: "text" }
+              - { label: "وصف الخدمة", name: "description", widget: "text", required: false }
 
           - label: "المشاريع والأعمال"
             name: "projects"
@@ -114,6 +116,7 @@ collections:
           - label: "بيانات التواصل"
             name: "contact"
             widget: "object"
+            required: false
             fields:
               - { label: "البريد الإلكتروني", name: "email", widget: "string", required: false }
               - label: "أرقام الهاتف (+ للإضافة و - للحذف)"
@@ -135,27 +138,29 @@ collections:
             required: false
             summary: "{{fields.label}}"
             fields:
-              - { label: "اسم المنصة", name: "platform", widget: "string" }
-              - { label: "النص الظاهر", name: "label", widget: "string" }
-              - { label: "الرابط الكامل", name: "url", widget: "string" }
+              - { label: "اسم المنصة", name: "platform", widget: "string", required: false }
+              - { label: "النص الظاهر", name: "label", widget: "string", required: false }
+              - { label: "الرابط الكامل", name: "url", widget: "string", required: false }
 
           - label: "مشاركة رابط الموقع"
             name: "site_sharing"
             widget: "object"
+            required: false
             fields:
-              - { label: "إظهار المشاركة للزوار", name: "enabled", widget: "boolean", default: true }
+              - { label: "إظهار المشاركة للزوار", name: "enabled", widget: "boolean", required: false, default: true }
               - { label: "العبارة المصاحبة للرابط", name: "message", widget: "text", required: false }
 
           - label: "إظهار وإخفاء أقسام الموقع"
             name: "section_visibility"
             widget: "object"
+            required: false
             fields:
-              - { label: "النبذة المهنية", name: "about", widget: "boolean", default: true }
-              - { label: "الخدمات", name: "services", widget: "boolean", default: true }
-              - { label: "المشاريع", name: "portfolio", widget: "boolean", default: true }
-              - { label: "البرامج", name: "tools", widget: "boolean", default: true }
-              - { label: "التواصل", name: "contact", widget: "boolean", default: true }
-              - { label: "الروابط الاجتماعية", name: "social", widget: "boolean", default: true }
+              - { label: "النبذة المهنية", name: "about", widget: "boolean", required: false, default: true }
+              - { label: "الخدمات", name: "services", widget: "boolean", required: false, default: true }
+              - { label: "المشاريع", name: "portfolio", widget: "boolean", required: false, default: true }
+              - { label: "البرامج", name: "tools", widget: "boolean", required: false, default: true }
+              - { label: "التواصل", name: "contact", widget: "boolean", required: false, default: true }
+              - { label: "الروابط الاجتماعية", name: "social", widget: "boolean", required: false, default: true }
 
           - label: "أقسام تعريفية إضافية"
             name: "extra_sections"
@@ -164,4 +169,4 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { label: "عنوان القسم", name: "title", widget: "string" }
-              - { label: "محتوى القسم", name: "body", widget: "text" }
+              - { label: "محتوى القسم", name: "body", widget: "text", required: false }
