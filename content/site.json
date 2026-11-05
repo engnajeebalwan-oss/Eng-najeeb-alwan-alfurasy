@@ -6,6 +6,9 @@
     "facebook_url": "https://www.facebook.com/profile.php?id=61575377673569"
   },
   "site_title": "المهندس نجيب علوان الفراصي | محفظة الأعمال الهندسية",
+  "site_sharing": {
+    "enabled": true
+  },
   "about_focus": "أهتم بالعمل الهندسي المنظم الذي يبدأ بفهم احتياجات المالك وطبيعة الموقع، ثم إعداد المخرجات الفنية ومراجعتها بما يساعد على تنفيذ أكثر وضوحاً وكفاءة.",
   "software": [
     "ETABS",
@@ -22,17 +25,41 @@
   },
   "eyebrow": "محفظة الأعمال الهندسية",
   "name": "المهندس نجيب علوان الفراصي",
+  "section_visibility": {
+    "about": true,
+    "services": true,
+    "portfolio": true,
+    "tools": true,
+    "contact": true,
+    "social": true
+  },
+  "about": {
+    "heading": "مهندس مدني - إنشائي",
+    "summary": "مهندس ",
+    "focus": "تصاميم وإشراف"
+  },
   "about_heading": "نبذة مهنية",
   "about_summary": "مهندس مدني مهتم بتقديم حلول عملية واضحة، مع الاهتمام بالتفاصيل الفنية والتنسيق بين التصميم ومتطلبات التنفيذ.",
   "location": "ذمار – اليمن",
   "projects": [
     {
-      "title": "مبنى سكني تجاري",
+      "title": "مبنى سكني تجاري ",
       "category": "إنشائي",
-      "description": "مبنى سكني تجاري يتكون من 10 طوابق",
+      "description": "مبنى سكني تجاري مكون من 9 طوابق",
       "image": "/images/uploads/1000156949.jpg",
+      "gallery": [
+        {
+          "image": "/images/uploads/1000156936.jpg",
+          "caption": "الواجهة الغربية"
+        },
+        {
+          "image": "/images/uploads/1000156936.jpg",
+          "caption": "الواجهة الشرقية"
+        }
+      ],
       "pdf_files": [
-        "/files/projects/pdf/السلم.pdf"
+        "/content/files/projects/pdf/الخزان-الأرضي.pdf",
+        "/content/files/projects/pdf/السلم.pdf"
       ]
     }
   ],
