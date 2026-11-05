@@ -71,7 +71,9 @@
         return !accept || accept.indexOf('image') !== -1 || accept.indexOf('*/*') !== -1;
       });
 
-      var show = hasImageInput && mediaDialogIsOpen();
+      /* لا نعتمد على محددات نافذة Decap؛ تختلف بنيتها بين الهاتف وإصدارات CMS.
+         ظهور مدخل رفع الصور يكفي لإظهار زر اختيار ملفات الهاتف. */
+      var show = hasImageInput;
       var nextDisplay = show ? 'block' : 'none';
       if (button.style.display !== nextDisplay) button.style.display = nextDisplay;
       if (hint.style.display !== nextDisplay) hint.style.display = nextDisplay;
