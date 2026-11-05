@@ -23,6 +23,9 @@ collections:
         fields:
           - { label: "الاسم المهني", name: "name", widget: "string" }
           - { label: "عنوان الموقع", name: "site_title", widget: "string" }
+
+          - { label: "الصورة الشخصية (اختيارية)", name: "personal_image", widget: "image", required: false }
+
           - { label: "العبارة التعريفية", name: "eyebrow", widget: "string" }
           - { label: "نبذة الواجهة الرئيسية", name: "hero_intro", widget: "text" }
           - { label: "الموقع الجغرافي", name: "location", widget: "string" }
@@ -57,7 +60,17 @@ collections:
               - { label: "اسم المشروع أو العمل", name: "title", widget: "string" }
               - { label: "نوع العمل", name: "category", widget: "string", required: false }
               - { label: "وصف مختصر", name: "description", widget: "text", required: false }
-              - { label: "صورة المشروع", name: "image", widget: "image", required: false }
+
+              - { label: "صورة غلاف المشروع", name: "image", widget: "image", required: false }
+
+              - label: "معرض صور المشروع (يمكن إضافة عدة صور)"
+                name: "gallery"
+                widget: "list"
+                required: false
+                summary: "{{fields.caption}}"
+                fields:
+                  - { label: "الصورة", name: "image", widget: "image" }
+                  - { label: "وصف الصورة (اختياري)", name: "caption", widget: "string", required: false }
 
               - label: "ملفات PDF للمشروع"
                 name: "pdf_files"
@@ -70,7 +83,18 @@ collections:
                   media_folder: "files/projects/pdf"
                   public_folder: "/files/projects/pdf"
 
-              - label: "ملفات AutoCAD (DWG وDXF)"
+              - label: "ملفات معاينة CAD بصيغة PDF"
+                name: "cad_preview_files"
+                widget: "list"
+                required: false
+                field:
+                  label: "ملف المعاينة PDF"
+                  name: "file"
+                  widget: "file"
+                  media_folder: "files/projects/cad-previews"
+                  public_folder: "/files/projects/cad-previews"
+
+              - label: "ملفات AutoCAD الأصلية (DWG وDXF)"
                 name: "cad_files"
                 widget: "list"
                 required: false
