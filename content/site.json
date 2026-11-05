@@ -28,8 +28,8 @@
   "section_visibility": {
     "about": true,
     "services": true,
-    "portfolio": false,
-    "tools": false,
+    "portfolio": true,
+    "tools": true,
     "contact": true,
     "social": false
   },
