@@ -1,4 +1,9 @@
-/*.pdf
+/content/files/projects/pdf/*.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline
+  X-Content-Type-Options: nosniff
+
+/content/files/projects/cad-previews/*.pdf
   Content-Type: application/pdf
   Content-Disposition: inline
   X-Content-Type-Options: nosniff
