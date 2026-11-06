@@ -31,7 +31,7 @@
     "portfolio": true,
     "tools": true,
     "contact": true,
-    "social": false
+    "social": true
   },
   "about": {
     "heading": "مهندس مدني - إنشائي",
