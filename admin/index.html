@@ -29,105 +29,26 @@
 
   <div id="image-picker-note" role="status" aria-live="polite">
     <strong>اختيار صورة:</strong>
-    اختر الصورة من تطبيق المعرض أو من تطبيق الملفات/ذاكرة الهاتف بحسب الخيارات التي يعرضها جهازك.
+    في مكتبة الوسائط اختر «رفع» للوصول إلى خيارات الصور والملفات التي يتيحها جهازك.
   </div>
 
   <script>
   (function () {
     'use strict';
-
-    /*
-      إصلاح توقيت تعديل مدخل الصور:
-      النسخة السابقة كانت تعدّل accept بعد الضغط على زر Upload بواسطة setTimeout،
-      وهذا قد يحدث بعد أن يكون Android قد بدأ بالفعل فتح منتقي الصور.
-      هنا نلتقط click على input[type=file] في مرحلة capture، أي قبل تنفيذ
-      السلوك الافتراضي الذي يفتح منتقي الملفات، ونحوّل accept إلى امتدادات صور
-      صريحة بدلاً من image/* لمحاولة إظهار منتقي الملفات العام على Android.
-
-      لا ننشئ رفعاً موازياً ولا نخزن Base64 داخل JSON؛ يظل Decap مسؤولاً عن
-      رفع الصورة إلى GitHub وحفظ مسارها ومعاينتها. ولا نغيّر مدخلات PDF/CAD.
-    */
-
-    var imageExtensionsOnly =
-      '.jpg,.jpeg,.png,.gif,.webp,.bmp,.tif,.tiff,.avif,.heic,.heif,.svg';
-
     var note = document.getElementById('image-picker-note');
     var noteTimer = null;
 
-    function isImageInput(input) {
-      if (!input || input.tagName !== 'INPUT' || input.type !== 'file') return false;
+    document.addEventListener('click', function (event) {
+      var input = event.target;
+      if (!input || input.tagName !== 'INPUT' || input.type !== 'file') return;
       var accept = (input.getAttribute('accept') || '').toLowerCase();
-      return accept.indexOf('image/') !== -1 ||
-        /\.(jpe?g|png|gif|webp|bmp|tiff?|avif|heic|heif|svg)/i.test(accept);
-    }
-
-    function prepareImageInput(input) {
-      if (!isImageInput(input)) return;
-      input.setAttribute('accept', imageExtensionsOnly);
-    }
-
-    function showNote() {
-      if (!note) return;
+      if (accept.indexOf('image/') === -1 && !/\.(jpe?g|png|gif|webp|bmp|tiff?|avif|heic|heif|svg)/i.test(accept)) return;
       note.style.display = 'block';
       if (noteTimer) window.clearTimeout(noteTimer);
       noteTimer = window.setTimeout(function () {
         note.style.display = 'none';
       }, 6500);
-    }
-
-    /*
-      الأهم: المعالجة المتزامنة في مرحلة capture قبل فتح نافذة النظام.
-      لا نمنع الحدث ولا نستبدل click الخاص بـ Decap.
-    */
-    document.addEventListener('click', function (event) {
-      var target = event.target;
-      if (target && target.tagName === 'INPUT' && target.type === 'file') {
-        if (isImageInput(target)) {
-          prepareImageInput(target);
-          showNote();
-        }
-        return;
-      }
-
-      /* احتياط للمدخلات التي يضيفها Decap بعد فتح نافذة الوسائط */
-      if (target && target.closest) {
-        var button = target.closest('button,[role="button"],label');
-        if (button) {
-          var label = (button.innerText || button.getAttribute('aria-label') || '').trim();
-          if (/upload|رفع|choose image|اختيار صورة|استبدال الصورة|إضافة صورة/i.test(label)) {
-            window.setTimeout(function () {
-              prepareExistingImageInputs(document);
-            }, 0);
-          }
-        }
-      }
     }, true);
-
-    function prepareExistingImageInputs(root) {
-      var scope = root && root.querySelectorAll ? root : document;
-      var inputs = scope.querySelectorAll('input[type="file"]');
-      Array.prototype.forEach.call(inputs, prepareImageInput);
-    }
-
-    /* تجهيز المدخل فور إضافته، مع إبقاء المعالجة المتزامنة أعلاه كضمان أخير. */
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        Array.prototype.forEach.call(mutation.addedNodes, function (node) {
-          if (node.nodeType !== 1) return;
-          if (node.matches && node.matches('input[type="file"]')) {
-            prepareImageInput(node);
-          }
-          prepareExistingImageInputs(node);
-        });
-      });
-    });
-
-    observer.observe(document.documentElement, {
-      childList: true,
-      subtree: true
-    });
-
-    prepareExistingImageInputs(document);
   })();
   </script>
 </body>
