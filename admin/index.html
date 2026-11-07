@@ -7,8 +7,9 @@
   <meta name="theme-color" content="#142536">
   <title>لوحة التحكم | إدارة المحتوى والمشاريع</title>
   <style>
-    /* تحسين توافق لوحة التحكم مع الهاتف المحمول */
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
     #mobile-picker-tip {
       position: fixed;
       z-index: 2147483000;
@@ -27,28 +28,86 @@
   </style>
 </head>
 <body>
-  <div id="mobile-picker-tip">يمكنك اختيار الصور والملفات مباشرة من ذاكرة الهاتف أو معرض الصور.</div>
+  <div id="mobile-picker-tip">
+    اختر الصورة من «ملفاتي» أو من مزوّد الملفات الذي يظهر في هاتفك. ارفع ملفات الصور فقط في حقول الصور.
+  </div>
 
   <!-- Decap CMS Core -->
   <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
 
   <script>
-    // ترويض مدخلات الملفات لتسمح بالتقاط واختيار الملفات من معرض الهاتف بدون احتجاز على الكاميرا
-    document.addEventListener('change', function(e) {
-      if (e.target && e.target.type === 'file') {
-        e.target.removeAttribute('capture');
-      }
-    }, true);
+    (function () {
+      'use strict';
 
-    // مراقبة النقر على زر الرفع لتنبيه المستخدم
-    document.addEventListener('click', function (event) {
-      var input = event.target;
-      if (input && input.tagName === 'INPUT' && input.type === 'file') {
-        var tip = document.getElementById('mobile-picker-tip');
-        tip.style.display = 'block';
-        setTimeout(function () { tip.style.display = 'none'; }, 4000);
+      /*
+       * في Chrome على Android قد يؤدي accept="image/*" وحده إلى فتح
+       * منتقي الصور المحدود. إضافة text/plain توسّع نافذة الاختيار
+       * لتسمح بظهور منتقي الملفات، مع إبقاء حقل Decap من نوع image.
+       */
+
+      var IMAGE_EXTENSIONS = /\.(jpe?g|png|webp|gif|bmp|tiff?|svg)$/i;
+      var TIP_DURATION = 5000;
+      var tipTimer = null;
+
+      function isImageInput(input) {
+        return !!(
+          input &&
+          input.tagName === 'INPUT' &&
+          input.type === 'file' &&
+          /image\//i.test(input.getAttribute('accept') || '')
+        );
       }
-    }, true);
+
+      function prepareImagePicker(input) {
+        if (!isImageInput(input)) return;
+
+        // لا نغيّر حقول PDF أو CAD أو الملفات الأخرى.
+        input.removeAttribute('capture');
+
+        var accept = input.getAttribute('accept') || 'image/*';
+        if (!/text\/plain/i.test(accept)) {
+          input.setAttribute('accept', accept + ',text/plain');
+        }
+
+        var tip = document.getElementById('mobile-picker-tip');
+        if (tip) {
+          tip.style.display = 'block';
+          if (tipTimer) clearTimeout(tipTimer);
+          tipTimer = setTimeout(function () {
+            tip.style.display = 'none';
+          }, TIP_DURATION);
+        }
+      }
+
+      function isAllowedImage(file) {
+        if (!file) return false;
+        if (file.type && /^image\//i.test(file.type)) return true;
+        return IMAGE_EXTENSIONS.test(file.name || '');
+      }
+
+      // يجهّز حقل الصورة قبل أن يفتح Android نافذة اختيار الملفات.
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+        if (isImageInput(target)) {
+          prepareImagePicker(target);
+        }
+      }, true);
+
+      // حماية إضافية: لا نسمح بتمرير ملف غير صوري إلى حقل صورة.
+      document.addEventListener('change', function (event) {
+        var input = event.target;
+        if (!isImageInput(input) || !input.files || !input.files.length) return;
+
+        var invalidFiles = Array.prototype.slice.call(input.files).filter(function (file) {
+          return !isAllowedImage(file);
+        });
+
+        if (invalidFiles.length) {
+          input.value = '';
+          window.alert('الملف المحدد ليس صورة مدعومة. اختر صورة بصيغة JPG أو PNG أو WEBP أو GIF أو BMP أو TIFF أو SVG.');
+        }
+      }, true);
+    })();
   </script>
 </body>
 </html>
