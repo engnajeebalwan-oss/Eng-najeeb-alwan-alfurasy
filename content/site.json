@@ -28,7 +28,7 @@
   "section_visibility": {
     "about": true,
     "services": true,
-    "portfolio": true,
+    "portfolio": false,
     "tools": true,
     "contact": true,
     "social": true
