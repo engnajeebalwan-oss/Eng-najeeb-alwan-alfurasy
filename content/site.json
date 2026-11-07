@@ -29,7 +29,7 @@
     "about": true,
     "services": true,
     "portfolio": true,
-    "tools": false,
+    "tools": true,
     "contact": true,
     "social": false
   },
