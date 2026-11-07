@@ -67,17 +67,19 @@ collections:
             name: "projects"
             widget: "list"
             required: false
+            default: []
             summary: "{{fields.title}} - {{fields.category}}"
             fields:
-              - { label: "اسم المشروع", name: "title", widget: "string", required: false }
+              - { label: "اسم المشروع", name: "title", widget: "string", required: true }
               - { label: "نوع العمل / التصنيف", name: "category", widget: "string", required: false }
               - { label: "وصف المشروع والتفاصيل", name: "description", widget: "text", required: false }
               - { label: "صورة الغلاف الرئيسية", name: "image", widget: "image", required: false, choose_url: false }
-              
+
               - label: "معرض صور المشروع"
                 name: "gallery"
                 widget: "list"
                 required: false
+                default: []
                 summary: "{{fields.caption}}"
                 fields:
                   - { label: "الصورة", name: "image", widget: "image", required: false, choose_url: false }
@@ -87,9 +89,8 @@ collections:
                 name: "pdf_files"
                 widget: "list"
                 required: false
-                fields:
-                  - { label: "عنوان الملف", name: "title", widget: "string", required: false }
-                  - { label: "ملف PDF", name: "file", widget: "file", required: false, media_folder: "files/projects/pdf", public_folder: "/content/files/projects/pdf", choose_url: false }
+                default: []
+                field: { label: "ملف PDF", name: "file", widget: "file", required: false, media_folder: "files/projects/pdf", public_folder: "/content/files/projects/pdf", choose_url: false }
 
               - label: "معاينات CAD بصيغة PDF"
                 name: "cad_preview_files"
