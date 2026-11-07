@@ -1,9 +1,15 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#142536">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#142536">
 <meta name="description" content="المهندس نجيب علوان الفراصي — محفظة الأعمال الهندسية والخدمات المدنية.">
-<meta property="og:type" content="website"><meta property="og:locale" content="ar_YE"><meta property="og:title" content="المهندس نجيب علوان الفراصي | محفظة الأعمال الهندسية"><meta property="og:description" content="أعمال ومشاريع وخدمات هندسية في التصميم والتحليل الإنشائي والمخططات والمتابعة."><meta property="og:url" content="https://engnajeeb.netlify.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_YE">
+<meta property="og:title" content="المهندس نجيب علوان الفراصي | محفظة الأعمال الهندسية">
+<meta property="og:description" content="أعمال ومشاريع وخدمات هندسية في التصميم والتحليل الإنشائي والمخططات والمتابعة.">
+<meta property="og:url" content="https://engnajeeb.netlify.app/">
 <title>المهندس نجيب علوان الفراصي | محفظة الأعمال الهندسية</title>
 <style>
 :root{--bg:#f4f6f8;--paper:#fff;--ink:#1d2b38;--muted:#657583;--navy:#142536;--gold:#c99a52;--line:#e1e7eb;--shadow:0 14px 38px #172b3b12;--max:1160px;--wa:#25d366;--wa-dark:#128c4a}
@@ -19,106 +25,726 @@ section{padding:46px 0}.section-head{margin-bottom:22px}.section-head h2{font-si
 @media(max-width:850px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-grid{grid-template-columns:minmax(105px,128px) minmax(0,1fr) minmax(105px,128px);gap:14px}.identity-card{min-height:145px}.identity-card img,.identity-placeholder{width:88px;height:88px}}
 @media(max-width:680px){.navlinks{display:none;position:absolute;top:72px;right:0;left:0;background:#142536;padding:14px 20px;border-bottom:1px solid #536779;flex-direction:column;align-items:stretch;gap:7px}.navlinks.open{display:flex}.menu{display:block}.hero{padding:30px 0 26px}.hero-grid{grid-template-columns:1fr 1fr;gap:14px}.hero-grid>div:first-child{grid-column:1/-1;grid-row:1;text-align:center}.identity-card:first-child{grid-column:1;grid-row:2}.identity-card:last-child{grid-column:2;grid-row:2}.identity-card{min-height:132px;padding:10px 7px}.identity-card img,.identity-placeholder{width:78px;height:78px}.hero h1{font-size:1.85rem}.project-grid,.services-grid{grid-template-columns:1fr}.project-cover{height:205px}section{padding:38px 0}.about-grid,.contact-grid{grid-template-columns:1fr}.contact-list{grid-template-columns:1fr}.share-box{align-items:flex-start;flex-direction:column}.file-card{align-items:flex-start}.file-actions{justify-content:flex-end}.wrap{width:min(var(--max),calc(100% - 26px))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-
-/* WhatsApp button in the customer inquiry form */
-.contact-form button[type="submit"].btn.whatsapp{
-  background:#25D366;
-  color:#073B1D;
-  border-color:#25D366;
-}
-.contact-form button[type="submit"].btn.whatsapp:hover{
-  background:#1FBE5B;
-  border-color:#1FBE5B;
-}
-
+.contact-form button[type="submit"].btn.whatsapp{background:#25D366;color:#073B1D;border-color:#25D366}
+.contact-form button[type="submit"].btn.whatsapp:hover{background:#1FBE5B;border-color:#1FBE5B}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home"><span class="brand-mark">⌖</span><span id="brandName">المهندس نجيب علوان الفراصي</span></a><button class="menu" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">☰</button><nav class="navlinks" id="navLinks"><a href="#portfolio">الأعمال والمشاريع</a><a href="#services">الخدمات</a><a href="#about">نبذة مهنية</a><a href="#tools">البرامج</a><a href="#contact">التواصل</a></nav></div></header>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span class="brand-mark">⌖</span><span id="brandName">المهندس نجيب علوان الفراصي</span></a>
+    <button class="menu" id="menuBtn" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    <nav class="navlinks" id="navLinks">
+      <a href="#portfolio">الأعمال والمشاريع</a>
+      <a href="#services">الخدمات</a>
+      <a href="#about">نبذة مهنية</a>
+      <a href="#tools">البرامج</a>
+      <a href="#contact">التواصل</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<section class="hero" id="home"><div class="wrap hero-grid"><div><div class="eyebrow" id="heroEyebrow">محفظة الأعمال الهندسية</div><h1 id="heroTitle">المهندس <span>نجيب علوان الفراصي</span></h1><div class="pills"><span class="pill">بكالوريوس هندسة مدنية</span><span class="pill" id="locationPill">اليمن · ذمار</span><span class="pill">تصميم وتحليل إنشائي</span></div><p id="heroIntro">أقدّم خدمات هندسية في مجال الهندسة المدنية، تشمل إعداد ومراجعة المخططات، التحليل والتصميم الإنشائي، حصر الكميات، ومتابعة الأعمال وفق متطلبات المشروع والاشتراطات الفنية.</p><div class="actions"><a class="btn whatsapp" id="heroWhatsapp" href="https://wa.me/967777463272" target="_blank" rel="noopener">واتساب ↗</a><a class="btn light" href="#portfolio">شاهد نماذج الأعمال ↓</a></div></div><div class="identity" id="identityArea"><div class="identity-card"><div class="identity-placeholder">👤</div><small>الصورة الشخصية</small></div><div class="identity-card logo"><div class="identity-placeholder">⌖</div><small>الشعار الهندسي</small></div></div></div></section>
-<section class="portfolio" id="portfolio"><div class="wrap"><div class="section-head"><div class="kicker">نماذج تطبيقية</div><h2>الأعمال والمشاريع الهندسية</h2><p>نماذج من الأعمال والمخططات والملفات التي يمكن استعراضها والاطلاع عليها.</p></div><div class="project-grid" id="portfolioContent"><div class="portfolio-empty"><strong>يجري تجهيز معرض الأعمال</strong>ستظهر هنا المشاريع والملفات التي تتم إضافتها من لوحة التحكم.</div></div></div></section>
-<section id="services"><div class="wrap"><div class="section-head"><div class="kicker">ما أقدمه</div><h2>الخدمات الهندسية</h2><p>تُحدّد نطاقات العمل والتسليمات وفق طبيعة كل مشروع والبيانات المتاحة.</p></div><div class="services-grid" id="servicesGrid"></div></div></section>
-<section id="about" style="background:#edf1f3"><div class="wrap"><div class="section-head"><div class="kicker">من أنا</div><h2 id="aboutHeading">نبذة مهنية</h2><p id="aboutSummary">مهندس مدني مهتم بتقديم حلول عملية واضحة، مع الاهتمام بالتفاصيل الفنية والتنسيق بين التصميم ومتطلبات التنفيذ.</p></div><div class="about-grid"><div class="about-box"><h3>التوجه المهني</h3><p id="aboutFocus">أهتم بالعمل الهندسي المنظم الذي يبدأ بفهم احتياجات المالك وطبيعة الموقع، ثم إعداد المخرجات الفنية ومراجعتها.</p></div><div class="about-box facts"><div class="fact"><span>المؤهل العلمي</span><strong id="degreeValue">بكالوريوس هندسة مدنية</strong></div><div class="fact"><span>الجامعة</span><strong id="universityValue">جامعة ذمار</strong></div><div class="fact"><span>سنة التخرج</span><strong id="graduationValue">2023–2024</strong></div><div class="fact"><span>التقدير</span><strong id="gradeValue">جيد جداً</strong></div><div class="fact"><span>مقر العمل</span><strong id="locationValue">ذمار – اليمن</strong></div></div></div><div id="extraSections"></div></div></section>
-<section id="tools"><div class="wrap"><div class="section-head"><div class="kicker">أدوات العمل</div><h2>البرامج الهندسية</h2><p>من الأدوات المستخدمة في أعمال النمذجة والتحليل والرسم الهندسي.</p></div><div class="software" id="softwareList"></div></div></section>
-<section class="contact" id="contact"><div class="wrap contact-grid"><div><div class="section-head"><div class="kicker">للتواصل</div><h2>هل لديك مشروع أو استفسار هندسي؟</h2><p>اختر وسيلة التواصل المناسبة أو أرسل وصفاً مختصراً لاحتياجك.</p></div><div class="contact-list" id="contactList"></div><div class="social-links" id="socialLinks"></div></div><form class="contact-form" id="contactForm"><div><label for="visitorName">الاسم</label><input id="visitorName" name="name" autocomplete="name" placeholder="اسمك" required></div><div><label for="visitorPhone">رقم التواصل (اختياري)</label><input id="visitorPhone" name="phone" inputmode="tel" placeholder="رقم الهاتف"></div><div><label for="visitorMessage">تفاصيل الاستفسار</label><textarea id="visitorMessage" name="message" placeholder="اكتب نبذة عن المشروع أو الخدمة المطلوبة..." required></textarea></div><button class="btn whatsapp" type="submit">إرسال عبر واتساب ↗</button><p class="note">سيتم فتح واتساب برسالة جاهزة لمراجعتها وإرسالها. لا تُحفظ البيانات في هذا الموقع.</p></form></div></section>
-<section class="share-section" id="shareSection"><div class="wrap share-box"><div><strong>شارك الموقع الهندسي</strong><p id="shareMessage">يسعدني أن تشارك هذه المحفظة الهندسية مع من قد تهمه الخدمات والأعمال المعروضة.</p></div><button class="btn primary" id="shareButton" type="button">مشاركة الموقع ↗</button></div></section>
-</main><footer><div class="wrap foot"><span>© <span id="year"></span> المهندس نجيب علوان الفراصي. جميع الحقوق محفوظة.</span><a href="#home">العودة إلى الأعلى ↑</a></div></footer>
-<div class="viewer-backdrop" id="viewerBackdrop" aria-hidden="true"><div class="viewer-panel" role="dialog" aria-modal="true" aria-labelledby="viewerTitle"><div class="viewer-head"><strong id="viewerTitle">معاينة الملف</strong><div class="viewer-tools"><span id="pdfZoomControls" hidden><button id="pdfZoomOut" type="button" aria-label="تصغير">−</button><button id="pdfZoomIn" type="button" aria-label="تكبير">+</button></span><button id="viewerClose" type="button">إغلاق ✕</button></div></div><div class="viewer-content" id="viewerContent"></div></div></div>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow" id="heroEyebrow">محفظة الأعمال الهندسية</div>
+      <h1 id="heroTitle">المهندس <span>نجيب علوان الفراصي</span></h1>
+      <div class="pills">
+        <span class="pill">بكالوريوس هندسة مدنية</span>
+        <span class="pill" id="locationPill">اليمن · ذمار</span>
+        <span class="pill">تصميم وتحليل إنشائي</span>
+      </div>
+      <p id="heroIntro">أقدّم خدمات هندسية في مجال الهندسة المدنية، تشمل إعداد ومراجعة المخططات، التحليل والتصميم الإنشائي، حصر الكميات، ومتابعة الأعمال وفق متطلبات المشروع والاشتراطات الفنية.</p>
+      <div class="actions">
+        <a class="btn whatsapp" id="heroWhatsapp" href="https://wa.me/967777463272" target="_blank" rel="noopener">واتساب ↗</a>
+        <a class="btn light" href="#portfolio">شاهد نماذج الأعمال ↓</a>
+      </div>
+    </div>
+    <div class="identity" id="identityArea">
+      <div class="identity-card"><div class="identity-placeholder">👤</div><small>الصورة الشخصية</small></div>
+      <div class="identity-card logo"><div class="identity-placeholder">⌖</div><small>الشعار الهندسي</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">نماذج تطبيقية</div>
+      <h2>الأعمال والمشاريع الهندسية</h2>
+      <p>نماذج من الأعمال والمخططات والملفات التي يمكن استعراضها والاطلاع عليها.</p>
+    </div>
+    <div class="project-grid" id="portfolioContent">
+      <div class="portfolio-empty">
+        <strong>يجري تجهيز معرض الأعمال</strong>
+        ستظهر هنا المشاريع والملفات التي تتم إضافتها من لوحة التحكم.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">ما أقدمه</div>
+      <h2>الخدمات الهندسية</h2>
+      <p>تُحدّد نطاقات العمل والتسليمات وفق طبيعة كل مشروع والبيانات المتاحة.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section id="about" style="background:#edf1f3">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">من أنا</div>
+      <h2 id="aboutHeading">نبذة مهنية</h2>
+      <p id="aboutSummary">مهندس مدني مهتم بتقديم حلول عملية واضحة، مع الاهتمام بالتفاصيل الفنية والتنسيق بين التصميم ومتطلبات التنفيذ.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-box">
+        <h3>التوجه المهني</h3>
+        <p id="aboutFocus">أهتم بالعمل الهندسي المنظم الذي يبدأ بفهم احتياجات المالك وطبيعة الموقع، ثم إعداد المخرجات الفنية ومراجعتها.</p>
+      </div>
+      <div class="about-box facts">
+        <div class="fact"><span>المؤهل العلمي</span><strong id="degreeValue">بكالوريوس هندسة مدنية</strong></div>
+        <div class="fact"><span>الجامعة</span><strong id="universityValue">جامعة ذمار</strong></div>
+        <div class="fact"><span>سنة التخرج</span><strong id="graduationValue">2023–2024</strong></div>
+        <div class="fact"><span>التقدير</span><strong id="gradeValue">جيد جداً</strong></div>
+        <div class="fact"><span>مقر العمل</span><strong id="locationValue">ذمار – اليمن</strong></div>
+      </div>
+    </div>
+    <div id="extraSections"></div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">أدوات العمل</div>
+      <h2>البرامج الهندسية</h2>
+      <p>من الأدوات المستخدمة في أعمال النمذجة والتحليل والرسم الهندسي.</p>
+    </div>
+    <div class="software" id="softwareList"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="section-head">
+        <div class="kicker">للتواصل</div>
+        <h2>هل لديك مشروع أو استفسار هندسي؟</h2>
+        <p>اختر وسيلة التواصل المناسبة أو أرسل وصفاً مختصراً لاحتياجك.</p>
+      </div>
+      <div class="contact-list" id="contactList"></div>
+      <div class="social-links" id="socialLinks"></div>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div>
+        <label for="visitorName">الاسم</label>
+        <input id="visitorName" name="name" autocomplete="name" placeholder="اسمك" required>
+      </div>
+      <div>
+        <label for="visitorPhone">رقم التواصل (اختياري)</label>
+        <input id="visitorPhone" name="phone" inputmode="tel" placeholder="رقم الهاتف">
+      </div>
+      <div>
+        <label for="visitorMessage">تفاصيل الاستفسار</label>
+        <textarea id="visitorMessage" name="message" placeholder="اكتب نبذة عن المشروع أو الخدمة المطلوبة..." required></textarea>
+      </div>
+      <button class="btn whatsapp" type="submit">إرسال عبر واتساب ↗</button>
+      <p class="note">سيتم فتح واتساب برسالة جاهزة لمراجعتها وإرسالها. لا تُحفظ البيانات في هذا الموقع.</p>
+    </form>
+  </div>
+</section>
+
+<section class="share-section" id="shareSection">
+  <div class="wrap share-box">
+    <div>
+      <strong>شارك الموقع الهندسي</strong>
+      <p id="shareMessage">يسعدني أن تشارك هذه المحفظة الهندسية مع من قد تهمه الخدمات والأعمال المعروضة.</p>
+    </div>
+    <button class="btn primary" id="shareButton" type="button">مشاركة الموقع ↗</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© <span id="year"></span> المهندس نجيب علوان الفراصي. جميع الحقوق محفوظة.</span>
+    <a href="#home">العودة إلى الأعلى ↑</a>
+  </div>
+</footer>
+
+<div class="viewer-backdrop" id="viewerBackdrop" aria-hidden="true">
+  <div class="viewer-panel" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
+    <div class="viewer-head">
+      <strong id="viewerTitle">معاينة الملف</strong>
+      <div class="viewer-tools">
+        <span id="pdfZoomControls" hidden>
+          <button id="pdfZoomOut" type="button" aria-label="تصغير">−</button>
+          <button id="pdfZoomIn" type="button" aria-label="تكبير">+</button>
+        </span>
+        <button id="viewerClose" type="button">إغلاق ✕</button>
+      </div>
+    </div>
+    <div class="viewer-content" id="viewerContent"></div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-const $=id=>document.getElementById(id);const menuBtn=$('menuBtn'),navLinks=$('navLinks');menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));$('year').textContent=new Date().getFullYear();
-let whatsappNumbers=['967777463272'];let siteShareMessage='يسعدني أن تشارك هذه المحفظة الهندسية مع من قد تهمه الخدمات والأعمال المعروضة.';const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));function cleanPhone(v){return String(v||'').replace(/[^\d]/g,'');}function normaliseFileUrl(url){let value=String(url||'').trim();if(!value)return '';if(/^https?:\/\//i.test(value)||value.startsWith('//')||value.startsWith('data:')||value.startsWith('blob:'))return value;value=value.replace(/\\/g,'/');if(value.startsWith('/files/projects/'))return '/content'+value;if(value.startsWith('files/projects/'))return '/content/'+value;if(value.startsWith('content/'))return '/'+value;if(!value.startsWith('/'))return '/'+value;return value;}
-function fileInfo(entry){if(typeof entry==='string'){const url=normaliseFileUrl(entry);return{url,name:decodeURIComponent(url.split('/').pop()||'ملف')};}if(entry&&typeof entry==='object'){const url=normaliseFileUrl(entry.file||entry.url||entry.path||entry.image||'');let decoded='ملف';try{decoded=decodeURIComponent(url.split('/').pop()||'ملف')}catch(e){}return{url,name:entry.name||entry.title||entry.caption||decoded};}return{url:'',name:'ملف'};}
-function addText(parent,tag,text,className){const el=document.createElement(tag);el.textContent=text||'';if(className)el.className=className;parent.append(el);return el;}function makePlaceholder(symbol){const el=document.createElement('div');el.className='identity-placeholder';el.textContent=symbol;return el;}
-function renderIdentity(data){const host=$('identityArea');host.replaceChildren();[['personal_image','الصورة الشخصية','👤','identity-card'],['engineering_logo','الشعار الهندسي','⌖','identity-card logo']].forEach(([key,label,fallback,cls],index)=>{const card=document.createElement('div');card.className=cls;if(data[key]){const img=document.createElement('img');img.src=data[key];img.alt=label;img.onerror=()=>img.replaceWith(makePlaceholder(fallback));card.append(img)}else card.append(makePlaceholder(fallback));addText(card,'small',label);if(index===0){const share=document.createElement('button');share.type='button';share.id='photoShareButton';share.className='photo-share-trigger';share.title='مشاركة رابط الموقع';share.setAttribute('aria-label','شارك موقعي');addText(share,'span','🔗','share-chain');addText(share,'span','شارك موقعي','share-label');share.addEventListener('click',()=>shareSite(share));card.append(share)}host.append(card)});}
-function renderServices(items){const host=$('servicesGrid');host.replaceChildren();(Array.isArray(items)?items:[]).forEach(item=>{const card=document.createElement('article');card.className='service-card';addText(card,'div',item.icon||'✦','service-icon');addText(card,'h3',item.title||'خدمة هندسية');addText(card,'p',item.description||'');host.append(card)});if(!host.children.length)host.hidden=true;}
-const viewerBackdrop=$('viewerBackdrop'),viewerContent=$('viewerContent');
-let activeGallery=[],activeImageIndex=0,pdfDocument=null,pdfObserver=null,pdfRecords=[],pdfZoom=1,pdfRenderToken=0,galleryTouchX=null,activePdfFile=null;
-if(window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';}
-function activateViewer(){if(!viewerBackdrop.classList.contains('open')){const state=Object.assign({},history.state||{},{siteViewerOpen:true});history.pushState(state,'',location.href);}viewerBackdrop.classList.add('open');viewerBackdrop.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function closeViewerUI(){pdfRenderToken++;if(pdfObserver){pdfObserver.disconnect();pdfObserver=null;}if(pdfDocument){try{pdfDocument.destroy()}catch(e){}pdfDocument=null;}pdfRecords=[];activeGallery=[];activePdfFile=null;galleryTouchX=null;viewerBackdrop.classList.remove('open');viewerBackdrop.setAttribute('aria-hidden','true');viewerContent.replaceChildren();viewerContent.classList.remove('pdf-mode','image-mode');$('pdfZoomControls').hidden=true;document.body.style.overflow='';}
-function closeViewer(){if(viewerBackdrop.classList.contains('open')&&history.state&&history.state.siteViewerOpen){history.back();}else closeViewerUI();}
-window.addEventListener('popstate',()=>{if(viewerBackdrop.classList.contains('open'))closeViewerUI();});
-function moveGallery(step){if(!activeGallery.length)return;const next=activeImageIndex+step;if(next<0||next>=activeGallery.length)return;activeImageIndex=next;showGalleryImage();}
-function showGalleryImage(){const item=activeGallery[activeImageIndex];if(!item)return;viewerContent.replaceChildren();viewerContent.classList.remove('pdf-mode');viewerContent.classList.add('image-mode');const img=document.createElement('img');img.src=item.url;img.alt=item.name||'صورة المشروع';img.onerror=()=>{viewerContent.textContent='تعذر تحميل الصورة.'};viewerContent.append(img);if(activeGallery.length>1){const prev=addText(viewerContent,'button','‹','viewer-nav viewer-prev');prev.type='button';prev.disabled=activeImageIndex===0;prev.setAttribute('aria-label','الصورة السابقة');prev.addEventListener('click',()=>moveGallery(-1));const next=addText(viewerContent,'button','›','viewer-nav viewer-next');next.type='button';next.disabled=activeImageIndex===activeGallery.length-1;next.setAttribute('aria-label','الصورة التالية');next.addEventListener('click',()=>moveGallery(1));addText(viewerContent,'span',(activeImageIndex+1)+' / '+activeGallery.length,'viewer-counter')}$('pdfZoomControls').hidden=true;$('viewerTitle').textContent=item.name||'صور المشروع';}
-function openImageViewer(images,index=0,title='صور المشروع'){pdfRenderToken++;activeGallery=images;activeImageIndex=Math.max(0,Math.min(index,images.length-1));$('viewerTitle').textContent=title;showGalleryImage();activateViewer();}
-viewerContent.addEventListener('touchstart',e=>{if(activeGallery.length>1&&e.touches&&e.touches.length===1)galleryTouchX=e.touches[0].clientX;},{passive:true});
-viewerContent.addEventListener('touchend',e=>{if(galleryTouchX===null||!activeGallery.length)return;const endX=e.changedTouches&&e.changedTouches[0]?e.changedTouches[0].clientX:galleryTouchX;const delta=endX-galleryTouchX;galleryTouchX=null;if(Math.abs(delta)>45)moveGallery(delta>0?-1:1);},{passive:true});
-async function renderPdfPage(record,token){if(!pdfDocument||token!==pdfRenderToken)return;try{const page=await pdfDocument.getPage(record.number);if(token!==pdfRenderToken)return;const baseWidth=Math.max(260,viewerContent.clientWidth-36);const natural=page.getViewport({scale:1});const cssWidth=baseWidth*pdfZoom;const scale=cssWidth/natural.width;const viewport=page.getViewport({scale});const dpr=Math.min(window.devicePixelRatio||1,2);record.wrapper.style.width=Math.round(viewport.width)+'px';record.wrapper.style.aspectRatio=viewport.width+'/'+viewport.height;record.canvas.width=Math.round(viewport.width*dpr);record.canvas.height=Math.round(viewport.height*dpr);record.canvas.style.width='100%';record.canvas.style.height='auto';const context=record.canvas.getContext('2d',{alpha:false});await page.render({canvasContext:context,viewport,transform:dpr===1?null:[dpr,0,0,dpr,0,0]}).promise;if(token===pdfRenderToken)record.rendered=true;}catch(error){if(token===pdfRenderToken&&activePdfFile)fallbackToNativePdf(activePdfFile,token,error);}}
-function fallbackToNativePdf(file,token,error){
- if(token!==pdfRenderToken||!file)return;
- pdfRenderToken++;
- if(pdfObserver){pdfObserver.disconnect();pdfObserver=null;}
- if(pdfDocument){try{pdfDocument.destroy()}catch(e){}pdfDocument=null;}
- pdfRecords=[];
- viewerContent.replaceChildren();viewerContent.classList.remove('image-mode');viewerContent.classList.add('pdf-mode');$('pdfZoomControls').hidden=true;
- /* Native browser viewer is the fallback display path. */
- const frame=document.createElement('iframe');frame.className='pdf-native-frame';frame.title=file.name||'ملف PDF';frame.setAttribute('loading','eager');frame.setAttribute('allow','fullscreen');frame.src=file.url;viewerContent.append(frame);
- /* Also request a download immediately; browsers may require the visitor to confirm it. */
- const downloadLink=document.createElement('a');downloadLink.href=file.url;downloadLink.download=file.name||'document.pdf';downloadLink.rel='noopener';downloadLink.style.display='none';document.body.append(downloadLink);
- try{downloadLink.click();}catch(downloadError){console.warn('تعذر بدء التنزيل التلقائي:',downloadError)}downloadLink.remove();
- const bar=document.createElement('div');bar.className='pdf-fallback-bar';addText(bar,'span','تُعرض النسخة الأصلية عبر عارض المتصفح، وبدأ طلب تنزيلها أيضاً.');
- const links=document.createElement('div');links.className='pdf-fallback-actions';
- const open=addText(links,'a','فتح في تبويب مستقل','');open.href=file.url;open.target='_blank';open.rel='noopener';
- const download=addText(links,'a','تنزيل مرة أخرى','');download.href=file.url;download.download=file.name||'document.pdf';
- bar.append(links);viewerContent.append(bar);
- console.error('PDF.js failed; native viewer and download fallback activated:',error);
+const $ = id => document.getElementById(id);
+const menuBtn = $('menuBtn'), navLinks = $('navLinks');
+menuBtn.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', 'false');
+}));
+$('year').textContent = new Date().getFullYear();
+
+let whatsappNumbers = ['967777463272'];
+let siteShareMessage = 'يسعدني أن تشارك هذه المحفظة الهندسية مع من قد تهمه الخدمات والأعمال المعروضة.';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function cleanPhone(v) { return String(v || '').replace(/[^\d]/g, ''); }
+
+function normaliseFileUrl(url) {
+  let value = String(url || '').trim();
+  if (!value) return '';
+  if (/^https?:\/\//i.test(value) || value.startsWith('//') || value.startsWith('data:') || value.startsWith('blob:')) return value;
+  value = value.replace(/\\/g, '/');
+  if (value.startsWith('/files/projects/')) return '/content' + value;
+  if (value.startsWith('files/projects/')) return '/content/' + value;
+  if (value.startsWith('content/')) return '/' + value;
+  if (!value.startsWith('/')) return '/' + value;
+  return value;
 }
-async function openPdfViewer(file,title){activeGallery=[];activePdfFile=file;pdfZoom=1;pdfRenderToken++;const token=pdfRenderToken;if(pdfObserver){pdfObserver.disconnect();pdfObserver=null;}if(pdfDocument){try{pdfDocument.destroy()}catch(e){}pdfDocument=null;}pdfRecords=[];viewerContent.replaceChildren();viewerContent.classList.remove('image-mode');viewerContent.classList.add('pdf-mode');$('viewerTitle').textContent=title||file.name;$('pdfZoomControls').hidden=false;const status=addText(viewerContent,'div','جارٍ تحميل المستند…','pdf-status');activateViewer();try{if(!window.pdfjsLib)throw new Error('PDF.js unavailable');const loadingTask=pdfjsLib.getDocument({url:file.url});pdfDocument=await loadingTask.promise;if(token!==pdfRenderToken)return;status.remove();const pages= document.createElement('div');pages.className='pdf-pages';viewerContent.append(pages);pdfObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const record=pdfRecords.find(x=>x.wrapper===entry.target);if(record&&!record.rendered)renderPdfPage(record,token);}});},{root:viewerContent,rootMargin:'900px 0px'});for(let n=1;n<=pdfDocument.numPages;n++){const wrapper=document.createElement('div');wrapper.className='pdf-page';const canvas=document.createElement('canvas');wrapper.append(canvas);const number=addText(wrapper,'span',String(n),'pdf-page-number');number.setAttribute('aria-label','رقم الصفحة');pages.append(wrapper);const record={number:n,wrapper,canvas,rendered:false};pdfRecords.push(record);pdfObserver.observe(wrapper);}if(pdfRecords[0])renderPdfPage(pdfRecords[0],token);}catch(error){fallbackToNativePdf(file,token,error);}}
-function changePdfZoom(step){if(!pdfDocument)return;pdfZoom=Math.max(.65,Math.min(2.4,Math.round((pdfZoom+step)*100)/100));const token=pdfRenderToken;pdfRecords.forEach(record=>{if(record.rendered){record.rendered=false;renderPdfPage(record,token);}});}
-$('pdfZoomIn').addEventListener('click',()=>changePdfZoom(.15));$('pdfZoomOut').addEventListener('click',()=>changePdfZoom(-.15));
-$('viewerClose').addEventListener('click',closeViewer);viewerBackdrop.addEventListener('click',e=>{if(e.target===viewerBackdrop)closeViewer()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&viewerBackdrop.classList.contains('open'))closeViewer();if(activeGallery.length&&(e.key==='ArrowRight'||e.key==='ArrowLeft'))moveGallery(e.key==='ArrowRight'?-1:1);});
-function addFileSection(body,label,entries,kind){
- if(!Array.isArray(entries)||!entries.length)return;
- const files=entries.map(fileInfo).filter(f=>f.url);if(!files.length)return;
- const group=document.createElement('div');group.className='file-group';addText(group,'h4',label);
- const list=document.createElement('div');list.className='file-list';
- files.forEach(file=>{
-  const row=document.createElement('div');row.className='file-card';
-  const meta=document.createElement('a');meta.className='file-meta file-meta-link';
-  const ext=(file.name.split('.').pop()||'FILE').toUpperCase();
-  addText(meta,'span',ext,'file-icon');addText(meta,'span',file.name,'file-name');
-  const actions=document.createElement('div');actions.className='file-actions'+(kind==='pdf'?' pdf-actions':'');
-  if(kind==='pdf'){
-   meta.href=file.url;meta.title='عرض ملف PDF داخل الموقع';meta.addEventListener('click',event=>{event.preventDefault();openPdfViewer(file,file.name)});
-   const view=addText(actions,'button','عرض','');view.type='button';view.title='عرض الملف داخل الموقع';view.addEventListener('click',()=>openPdfViewer(file,file.name));
-   const download=addText(actions,'a','تنزيل','');download.href=file.url;download.download=file.name;download.title='تنزيل ملف PDF';
-  }else{
-   const open=addText(actions,'a','فتح','');open.href=file.url;open.target='_blank';open.rel='noopener';open.title='فتح الملف بالتطبيق أو العارض المتاح على الجهاز';
-   const download=addText(actions,'a','تنزيل','');download.href=file.url;download.download=file.name;
+
+function fileInfo(entry) {
+  if (typeof entry === 'string') {
+    const url = normaliseFileUrl(entry);
+    let decoded = 'ملف';
+    try { decoded = decodeURIComponent(url.split('/').pop() || 'ملف'); } catch (e) {}
+    return { url, name: decoded };
   }
-  row.append(meta,actions);list.append(row);
- });
- group.append(list);body.append(group);
+  if (entry && typeof entry === 'object') {
+    const url = normaliseFileUrl(entry.file || entry.url || entry.path || entry.image || '');
+    let decoded = 'ملف';
+    try { decoded = decodeURIComponent(url.split('/').pop() || 'ملف'); } catch (e) {}
+    return { url, name: entry.name || entry.title || entry.caption || decoded };
+  }
+  return { url: '', name: 'ملف' };
 }
-function renderProjects(items){const host=$('portfolioContent');host.replaceChildren();if(!Array.isArray(items)||!items.length){host.className='project-grid';const empty=document.createElement('div');empty.className='portfolio-empty';addText(empty,'strong','سيظهر معرض الأعمال هنا');addText(empty,'span','أضف مشروعاً من لوحة التحكم لعرض صوره ومخططاته وملفاته.');host.append(empty);return}host.className='project-grid';items.forEach(item=>{const card=document.createElement('article');card.className='project-card';const gallery=[];if(item.image)gallery.push({url:item.image,name:item.title||'غلاف المشروع'});if(Array.isArray(item.gallery))item.gallery.forEach((entry,i)=>{const f=fileInfo(entry);if(f.url&&!gallery.some(x=>x.url===f.url))gallery.push({url:f.url,name:f.name||'صورة '+(i+1)})});if(gallery.length){const strip=document.createElement('div');strip.className='project-gallery';gallery.forEach((g,i)=>{const b=document.createElement('button');b.type='button';const img=document.createElement('img');img.src=g.url;img.alt=g.name;img.loading='lazy';img.onerror=()=>{b.textContent='تعذر تحميل الصورة'};b.append(img);b.addEventListener('click',()=>openImageViewer(gallery,i,item.title||'صور المشروع'));strip.append(b)});card.append(strip)}const body=document.createElement('div');body.className='project-body';if(item.category)addText(body,'div',item.category,'project-category');addText(body,'h3',item.title||'مشروع هندسي');if(item.description)addText(body,'p',item.description);addFileSection(body,'ملفات المشروع بصيغة PDF',item.pdf_files,'pdf');addFileSection(body,'معاينات مخططات AutoCAD (PDF)',item.cad_preview_files,'pdf');addFileSection(body,'ملفات AutoCAD الأصلية (DWG / DXF)',item.cad_files,'cad');card.append(body);host.append(card)});}
-function renderSoftware(items){const host=$('softwareList');host.replaceChildren();(Array.isArray(items)?items:[]).forEach(item=>addText(host,'span',typeof item==='string'?item:(item.software_name||'')));if(!host.children.length)$('tools').hidden=true;}
-function renderContact(contact={},social=[]){const host=$('contactList');host.replaceChildren();const phones=Array.isArray(contact.phone_numbers)?contact.phone_numbers.map(x=>typeof x==='string'?x:x.number).filter(Boolean):(contact.phone_display?[contact.phone_display]:[]);const whats=Array.isArray(contact.whatsapp_numbers)?contact.whatsapp_numbers.map(x=>typeof x==='string'?x:x.number).filter(Boolean):(contact.whatsapp_number?[contact.whatsapp_number]:[]);whatsappNumbers=whats.map(cleanPhone).filter(Boolean);if(!whatsappNumbers.length&&contact.whatsapp_number)whatsappNumbers=[cleanPhone(contact.whatsapp_number)];phones.forEach((phone,i)=>{const item=document.createElement('div');item.className='contact-item';const icon=addText(item,'span','☎','contact-icon');const content=document.createElement('div');addText(content,'b',phones.length>1?'اتصال هاتفي '+(i+1):'اتصال هاتفي');const a=addText(content,'a',phone);a.href='tel:'+cleanPhone(phone);a.setAttribute('aria-label','اتصل على '+phone);item.append(content);icon.setAttribute('aria-hidden','true');item.addEventListener('click',e=>{if(e.target.tagName!=='A')location.href='tel:'+cleanPhone(phone)});host.append(item)});whats.forEach((phone,i)=>{const item=document.createElement('div');item.className='contact-item whatsapp';addText(item,'span','◉','contact-icon');const content=document.createElement('div');addText(content,'b',whats.length>1?'واتساب '+(i+1):'تواصل عبر واتساب');const a=addText(content,'a',phone);a.href='https://wa.me/'+cleanPhone(phone);a.target='_blank';a.rel='noopener';item.append(content);host.append(item)});if(contact.email){const item=document.createElement('div');item.className='contact-item';addText(item,'span','✉','contact-icon');const content=document.createElement('div');addText(content,'b','البريد الإلكتروني');const a=addText(content,'a',contact.email);a.href='mailto:'+contact.email;item.append(content);host.append(item)}const socialHost=$('socialLinks');socialHost.replaceChildren();(Array.isArray(social)?social:[]).forEach(s=>{if(!s.url)return;const a=document.createElement('a');a.className='social-link';a.href=s.url;a.target='_blank';a.rel='noopener';a.textContent=s.label||s.platform||'رابط';socialHost.append(a)});if(!socialHost.children.length)socialHost.hidden=true;}
-function applyVisibility(settings={}){const map={about:'about',services:'services',portfolio:'portfolio',tools:'tools',contact:'contact'};Object.entries(map).forEach(([key,id])=>{$(id).hidden=settings[key]===false});$('socialLinks').hidden=settings.social===false||!$('socialLinks').children.length;}
-function renderExtraSections(items){const host=$('extraSections');host.replaceChildren();(Array.isArray(items)?items:[]).forEach(item=>{const card=document.createElement('div');card.className='extra-card';addText(card,'h3',item.title||'');addText(card,'p',item.body||'');host.append(card)});}
-function renderShare(settings={}){const enabled=settings.enabled!==false;$('shareSection').hidden=!enabled;const top=$('photoShareButton');if(top)top.hidden=!enabled;siteShareMessage=settings.message||siteShareMessage;$('shareMessage').textContent=siteShareMessage;}
-async function shareSite(trigger){const url=location.origin+location.pathname,title=document.title,text=siteShareMessage+'\n'+url;if(navigator.share){try{await navigator.share({title,text,url});return}catch(e){if(e&&e.name==='AbortError')return}}try{await navigator.clipboard.writeText(text);if(trigger){const old=trigger.innerHTML;trigger.textContent='تم نسخ الرابط ✓';setTimeout(()=>{trigger.innerHTML=old},2200)}else{$('shareButton').textContent='تم نسخ الرابط ✓';setTimeout(()=>$('shareButton').textContent='مشاركة الموقع ↗',2200)}}catch(e){window.prompt('انسخ رابط الموقع:',url)}}$('shareButton').addEventListener('click',()=>shareSite($('shareButton')));
-async function loadSiteContent(){try{const response=await fetch('/content/site.json',{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json(),contact=data.contact||{};const setText=(id,value)=>{if(value!==undefined&&value!==null&&value!=='')$(id).textContent=value};setText('brandName',data.name);if(data.name){const displayName=data.name.replace(/^المهندس\s*/,'');$('heroTitle').innerHTML='المهندس <span>'+esc(displayName)+'</span>';document.title=data.site_title||data.name}setText('heroEyebrow',data.eyebrow);setText('heroIntro',data.hero_intro);setText('locationPill',data.location);setText('locationValue',data.location);const about=data.about||{};setText('aboutHeading',about.heading||data.about_heading);setText('aboutSummary',about.summary||data.about_summary);setText('aboutFocus',about.focus||data.about_focus);if(data.education){setText('degreeValue',data.education.degree);setText('universityValue',data.education.university);setText('graduationValue',data.education.graduation_year);setText('gradeValue',data.education.grade)}renderIdentity(data);renderProjects(data.projects);renderServices(data.services);renderSoftware(data.software);renderContact(contact,data.social_links);renderExtraSections(data.extra_sections);renderShare(data.site_sharing||{});applyVisibility(data.section_visibility||{});if(whatsappNumbers.length)$('heroWhatsapp').href='https://wa.me/'+whatsappNumbers[0]}catch(error){console.warn('تعذر تحميل محتوى الموقع المحفوظ؛ ستظهر البيانات الافتراضية.',error)}}loadSiteContent();
-$('contactForm').addEventListener('submit',e=>{e.preventDefault();const number=whatsappNumbers[0]||'967777463272',name=$('visitorName').value.trim(),phone=$('visitorPhone').value.trim(),message=$('visitorMessage').value.trim();const body=`السلام عليكم، أنا ${name}${phone?'، رقم التواصل: '+phone:''}.\n\n${message}`;window.open('https://wa.me/'+number+'?text='+encodeURIComponent(body),'_blank','noopener')});
-</script></body></html>
+
+function addText(parent, tag, text, className) {
+  const el = document.createElement(tag);
+  el.textContent = text || '';
+  if (className) el.className = className;
+  parent.append(el);
+  return el;
+}
+
+function makePlaceholder(symbol) {
+  const el = document.createElement('div');
+  el.className = 'identity-placeholder';
+  el.textContent = symbol;
+  return el;
+}
+
+function renderIdentity(data) {
+  const host = $('identityArea');
+  host.replaceChildren();
+  [['personal_image', 'الصورة الشخصية', '👤', 'identity-card'], ['engineering_logo', 'الشعار الهندسي', '⌖', 'identity-card logo']].forEach(([key, label, fallback, cls], index) => {
+    const card = document.createElement('div');
+    card.className = cls;
+    if (data && data[key]) {
+      const img = document.createElement('img');
+      img.src = normaliseFileUrl(data[key]);
+      img.alt = label;
+      img.onerror = () => img.replaceWith(makePlaceholder(fallback));
+      card.append(img);
+    } else {
+      card.append(makePlaceholder(fallback));
+    }
+    addText(card, 'small', label);
+    if (index === 0) {
+      const share = document.createElement('button');
+      share.type = 'button';
+      share.id = 'photoShareButton';
+      share.className = 'photo-share-trigger';
+      share.title = 'مشاركة رابط الموقع';
+      share.setAttribute('aria-label', 'شارك موقعي');
+      addText(share, 'span', '🔗', 'share-chain');
+      addText(share, 'span', 'شارك موقعي', 'share-label');
+      share.addEventListener('click', () => shareSite(share));
+      card.append(share);
+    }
+    host.append(card);
+  });
+}
+
+function renderServices(items) {
+  const host = $('servicesGrid');
+  host.replaceChildren();
+  (Array.isArray(items) ? items : []).forEach(item => {
+    if (!item) return;
+    const card = document.createElement('article');
+    card.className = 'service-card';
+    addText(card, 'div', item.icon || '✦', 'service-icon');
+    addText(card, 'h3', item.title || 'خدمة هندسية');
+    addText(card, 'p', item.description || '');
+    host.append(card);
+  });
+  if (!host.children.length) host.hidden = true;
+}
+
+const viewerBackdrop = $('viewerBackdrop'), viewerContent = $('viewerContent');
+let activeGallery = [], activeImageIndex = 0, pdfDocument = null, pdfObserver = null, pdfRecords = [], pdfZoom = 1, pdfRenderToken = 0, galleryTouchX = null, activePdfFile = null;
+
+if (window.pdfjsLib) {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+function activateViewer() {
+  if (!viewerBackdrop.classList.contains('open')) {
+    const state = Object.assign({}, history.state || {}, { siteViewerOpen: true });
+    history.pushState(state, '', location.href);
+  }
+  viewerBackdrop.classList.add('open');
+  viewerBackdrop.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeViewerUI() {
+  pdfRenderToken++;
+  if (pdfObserver) { pdfObserver.disconnect(); pdfObserver = null; }
+  if (pdfDocument) { try { pdfDocument.destroy(); } catch (e) {} pdfDocument = null; }
+  pdfRecords = [];
+  activeGallery = [];
+  activePdfFile = null;
+  galleryTouchX = null;
+  viewerBackdrop.classList.remove('open');
+  viewerBackdrop.setAttribute('aria-hidden', 'true');
+  viewerContent.replaceChildren();
+  viewerContent.classList.remove('pdf-mode', 'image-mode');
+  $('pdfZoomControls').hidden = true;
+  document.body.style.overflow = '';
+}
+
+function closeViewer() {
+  if (viewerBackdrop.classList.contains('open') && history.state && history.state.siteViewerOpen) {
+    history.back();
+  } else {
+    closeViewerUI();
+  }
+}
+
+window.addEventListener('popstate', () => {
+  if (viewerBackdrop.classList.contains('open')) closeViewerUI();
+});
+
+function moveGallery(step) {
+  if (!activeGallery.length) return;
+  const next = activeImageIndex + step;
+  if (next < 0 || next >= activeGallery.length) return;
+  activeImageIndex = next;
+  showGalleryImage();
+}
+
+function showGalleryImage() {
+  const item = activeGallery[activeImageIndex];
+  if (!item) return;
+  viewerContent.replaceChildren();
+  viewerContent.classList.remove('pdf-mode');
+  viewerContent.classList.add('image-mode');
+  const img = document.createElement('img');
+  img.src = item.url;
+  img.alt = item.name || 'صورة المشروع';
+  img.onerror = () => { viewerContent.textContent = 'تعذر تحميل الصورة.'; };
+  viewerContent.append(img);
+  if (activeGallery.length > 1) {
+    const prev = addText(viewerContent, 'button', '‹', 'viewer-nav viewer-prev');
+    prev.type = 'button';
+    prev.disabled = activeImageIndex === 0;
+    prev.setAttribute('aria-label', 'الصورة السابقة');
+    prev.addEventListener('click', () => moveGallery(-1));
+    const next = addText(viewerContent, 'button', '›', 'viewer-nav viewer-next');
+    next.type = 'button';
+    next.disabled = activeImageIndex === activeGallery.length - 1;
+    next.setAttribute('aria-label', 'الصورة التالية');
+    next.addEventListener('click', () => moveGallery(1));
+    addText(viewerContent, 'span', (activeImageIndex + 1) + ' / ' + activeGallery.length, 'viewer-counter');
+  }
+  $('pdfZoomControls').hidden = true;
+  $('viewerTitle').textContent = item.name || 'صور المشروع';
+}
+
+function openImageViewer(images, index = 0, title = 'صور المشروع') {
+  pdfRenderToken++;
+  activeGallery = images;
+  activeImageIndex = Math.max(0, Math.min(index, images.length - 1));
+  $('viewerTitle').textContent = title;
+  showGalleryImage();
+  activateViewer();
+}
+
+viewerContent.addEventListener('touchstart', e => {
+  if (activeGallery.length > 1 && e.touches && e.touches.length === 1) galleryTouchX = e.touches[0].clientX;
+}, { passive: true });
+
+viewerContent.addEventListener('touchend', e => {
+  if (galleryTouchX === null || !activeGallery.length) return;
+  const endX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : galleryTouchX;
+  const delta = endX - galleryTouchX;
+  galleryTouchX = null;
+  if (Math.abs(delta) > 45) moveGallery(delta > 0 ? -1 : 1);
+}, { passive: true });
+
+async function renderPdfPage(record, token) {
+  if (!pdfDocument || token !== pdfRenderToken) return;
+  try {
+    const page = await pdfDocument.getPage(record.number);
+    if (token !== pdfRenderToken) return;
+    const baseWidth = Math.max(260, viewerContent.clientWidth - 36);
+    const natural = page.getViewport({ scale: 1 });
+    const cssWidth = baseWidth * pdfZoom;
+    const scale = cssWidth / natural.width;
+    const viewport = page.getViewport({ scale });
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    record.wrapper.style.width = Math.round(viewport.width) + 'px';
+    record.wrapper.style.aspectRatio = viewport.width + '/' + viewport.height;
+    record.canvas.width = Math.round(viewport.width * dpr);
+    record.canvas.height = Math.round(viewport.height * dpr);
+    record.canvas.style.width = '100%';
+    record.canvas.style.height = 'auto';
+    const context = record.canvas.getContext('2d', { alpha: false });
+    await page.render({ canvasContext: context, viewport, transform: dpr === 1 ? null : [dpr, 0, 0, dpr, 0, 0] }).promise;
+    if (token === pdfRenderToken) record.rendered = true;
+  } catch (error) {
+    if (token === pdfRenderToken && activePdfFile) fallbackToNativePdf(activePdfFile, token, error);
+  }
+}
+
+function fallbackToNativePdf(file, token, error) {
+  if (token !== pdfRenderToken || !file) return;
+  pdfRenderToken++;
+  if (pdfObserver) { pdfObserver.disconnect(); pdfObserver = null; }
+  if (pdfDocument) { try { pdfDocument.destroy(); } catch (e) {} pdfDocument = null; }
+  pdfRecords = [];
+  viewerContent.replaceChildren();
+  viewerContent.classList.remove('image-mode');
+  viewerContent.classList.add('pdf-mode');
+  $('pdfZoomControls').hidden = true;
+
+  const frame = document.createElement('iframe');
+  frame.className = 'pdf-native-frame';
+  frame.title = file.name || 'ملف PDF';
+  frame.setAttribute('loading', 'eager');
+  frame.setAttribute('allow', 'fullscreen');
+  frame.src = file.url;
+  viewerContent.append(frame);
+
+  const downloadLink = document.createElement('a');
+  downloadLink.href = file.url;
+  downloadLink.download = file.name || 'document.pdf';
+  downloadLink.rel = 'noopener';
+  downloadLink.style.display = 'none';
+  document.body.append(downloadLink);
+  try { downloadLink.click(); } catch (downloadError) {}
+  downloadLink.remove();
+
+  const bar = document.createElement('div');
+  bar.className = 'pdf-fallback-bar';
+  addText(bar, 'span', 'تُعرض النسخة عبر عارض المتصفح المدمج.');
+  const links = document.createElement('div');
+  links.className = 'pdf-fallback-actions';
+  const open = addText(links, 'a', 'فتح في تبويب مستقل', '');
+  open.href = file.url;
+  open.target = '_blank';
+  open.rel = 'noopener';
+  const download = addText(links, 'a', 'تنزيل الملف', '');
+  download.href = file.url;
+  download.download = file.name || 'document.pdf';
+  bar.append(links);
+  viewerContent.append(bar);
+}
+
+async function openPdfViewer(file, title) {
+  activeGallery = [];
+  activePdfFile = file;
+  pdfZoom = 1;
+  pdfRenderToken++;
+  const token = pdfRenderToken;
+  if (pdfObserver) { pdfObserver.disconnect(); pdfObserver = null; }
+  if (pdfDocument) { try { pdfDocument.destroy(); } catch (e) {} pdfDocument = null; }
+  pdfRecords = [];
+  viewerContent.replaceChildren();
+  viewerContent.classList.remove('image-mode');
+  viewerContent.classList.add('pdf-mode');
+  $('viewerTitle').textContent = title || file.name;
+  $('pdfZoomControls').hidden = false;
+  const status = addText(viewerContent, 'div', 'جارٍ تحميل المستند…', 'pdf-status');
+  activateViewer();
+
+  try {
+    if (!window.pdfjsLib) throw new Error('PDF.js unavailable');
+    const loadingTask = pdfjsLib.getDocument({ url: file.url });
+    pdfDocument = await loadingTask.promise;
+    if (token !== pdfRenderToken) return;
+    status.remove();
+    const pages = document.createElement('div');
+    pages.className = 'pdf-pages';
+    viewerContent.append(pages);
+
+    pdfObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const record = pdfRecords.find(x => x.wrapper === entry.target);
+          if (record && !record.rendered) renderPdfPage(record, token);
+        }
+      });
+    }, { root: viewerContent, rootMargin: '900px 0px' });
+
+    for (let n = 1; n <= pdfDocument.numPages; n++) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'pdf-page';
+      const canvas = document.createElement('canvas');
+      wrapper.append(canvas);
+      const number = addText(wrapper, 'span', String(n), 'pdf-page-number');
+      number.setAttribute('aria-label', 'رقم الصفحة');
+      pages.append(wrapper);
+      const record = { number: n, wrapper, canvas, rendered: false };
+      pdfRecords.push(record);
+      pdfObserver.observe(wrapper);
+    }
+    if (pdfRecords[0]) renderPdfPage(pdfRecords[0], token);
+  } catch (error) {
+    fallbackToNativePdf(file, token, error);
+  }
+}
+
+function changePdfZoom(step) {
+  if (!pdfDocument) return;
+  pdfZoom = Math.max(.65, Math.min(2.4, Math.round((pdfZoom + step) * 100) / 100));
+  const token = pdfRenderToken;
+  pdfRecords.forEach(record => {
+    if (record.rendered) {
+      record.rendered = false;
+      renderPdfPage(record, token);
+    }
+  });
+}
+
+$('pdfZoomIn').addEventListener('click', () => changePdfZoom(.15));
+$('pdfZoomOut').addEventListener('click', () => changePdfZoom(-.15));
+$('viewerClose').addEventListener('click', closeViewer);
+viewerBackdrop.addEventListener('click', e => { if (e.target === viewerBackdrop) closeViewer(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && viewerBackdrop.classList.contains('open')) closeViewer();
+  if (activeGallery.length && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) moveGallery(e.key === 'ArrowRight' ? -1 : 1);
+});
+
+function addFileSection(body, label, entries, kind) {
+  if (!Array.isArray(entries) || !entries.length) return;
+  const files = entries.map(fileInfo).filter(f => f.url);
+  if (!files.length) return;
+
+  const group = document.createElement('div');
+  group.className = 'file-group';
+  addText(group, 'h4', label);
+  const list = document.createElement('div');
+  list.className = 'file-list';
+
+  files.forEach(file => {
+    const row = document.createElement('div');
+    row.className = 'file-card';
+    const meta = document.createElement('a');
+    meta.className = 'file-meta file-meta-link';
+    const ext = (file.name.split('.').pop() || 'FILE').toUpperCase();
+    addText(meta, 'span', ext, 'file-icon');
+    addText(meta, 'span', file.name, 'file-name');
+    const actions = document.createElement('div');
+    actions.className = 'file-actions' + (kind === 'pdf' ? ' pdf-actions' : '');
+
+    if (kind === 'pdf') {
+      meta.href = file.url;
+      meta.title = 'عرض ملف PDF داخل الموقع';
+      meta.addEventListener('click', event => {
+        event.preventDefault();
+        openPdfViewer(file, file.name);
+      });
+      const view = addText(actions, 'button', 'عرض', '');
+      view.type = 'button';
+      view.title = 'عرض الملف داخل الموقع';
+      view.addEventListener('click', () => openPdfViewer(file, file.name));
+      const download = addText(actions, 'a', 'تنزيل', '');
+      download.href = file.url;
+      download.download = file.name;
+      download.title = 'تنزيل ملف PDF';
+    } else {
+      meta.href = file.url;
+      meta.target = '_blank';
+      meta.rel = 'noopener';
+      const open = addText(actions, 'a', 'فتح', '');
+      open.href = file.url;
+      open.target = '_blank';
+      open.rel = 'noopener';
+      open.title = 'فتح أو تنزيل الملف الأصلي';
+      const download = addText(actions, 'a', 'تنزيل', '');
+      download.href = file.url;
+      download.download = file.name;
+    }
+    row.append(meta, actions);
+    list.append(row);
+  });
+  group.append(list);
+  body.append(group);
+}
+
+// دالة عرض المشاريع المحدثة والآمنة للتعامل مع أي حقول ناقصة
+function renderProjects(items) {
+  const host = $('portfolioContent');
+  host.replaceChildren();
+
+  if (!Array.isArray(items) || !items.length) {
+    host.className = 'project-grid';
+    const empty = document.createElement('div');
+    empty.className = 'portfolio-empty';
+    addText(empty, 'strong', 'سيظهر معرض الأعمال هنا');
+    addText(empty, 'span', 'أضف مشروعاً من لوحة التحكم لعرض صوره ومخططاته وملفاته.');
+    host.append(empty);
+    return;
+  }
+
+  host.className = 'project-grid';
+
+  items.forEach(item => {
+    if (!item) return;
+    const card = document.createElement('article');
+    card.className = 'project-card';
+
+    // جمع الصور بطريقة آمنة
+    const gallery = [];
+    if (item.image) {
+      gallery.push({ url: normaliseFileUrl(item.image), name: item.title || 'غلاف المشروع' });
+    }
+    if (Array.isArray(item.gallery)) {
+      item.gallery.forEach((entry, i) => {
+        const f = fileInfo(entry);
+        if (f.url && !gallery.some(x => x.url === f.url)) {
+          gallery.push({ url: f.url, name: f.name || ('صورة ' + (i + 1)) });
+        }
+      });
+    }
+
+    // عرض شريط الصور إذا وُجدت
+    if (gallery.length) {
+      const strip = document.createElement('div');
+      strip.className = 'project-gallery';
+      gallery.forEach((g, i) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        const img = document.createElement('img');
+        img.src = g.url;
+        img.alt = g.name;
+        img.loading = 'lazy';
+        img.onerror = () => { b.textContent = 'تعذر تحميل الصورة'; };
+        b.append(img);
+        b.addEventListener('click', () => openImageViewer(gallery, i, item.title || 'صور المشروع'));
+        strip.append(b);
+      });
+      card.append(strip);
+    }
+
+    // محتوى البطاقة
+    const body = document.createElement('div');
+    body.className = 'project-body';
+
+    if (item.category) addText(body, 'div', item.category, 'project-category');
+    addText(body, 'h3', item.title || 'مشروع هندسي');
+    if (item.description) addText(body, 'p', item.description);
+
+    // إضافة أقسام الملفات بشكل مرن
+    if (Array.isArray(item.pdf_files)) {
+      addFileSection(body, 'ملفات المشروع بصيغة PDF', item.pdf_files, 'pdf');
+    }
+    if (Array.isArray(item.cad_preview_files)) {
+      addFileSection(body, 'معاينات مخططات AutoCAD (PDF)', item.cad_preview_files, 'pdf');
+    }
+    if (Array.isArray(item.cad_files)) {
+      addFileSection(body, 'ملفات AutoCAD الأصلية (DWG / DXF)', item.cad_files, 'cad');
+    }
+
+    card.append(body);
+    host.append(card);
+  });
+}
+
+function renderSoftware(items) {
+  const host = $('softwareList');
+  host.replaceChildren();
+  (Array.isArray(items) ? items : []).forEach(item => {
+    if (!item) return;
+    const name = typeof item === 'string' ? item : (item.software_name || '');
+    if (name) addText(host, 'span', name);
+  });
+  if (!host.children.length) $('tools').hidden = true;
+}
+
+function renderContact(contact = {}, social = []) {
+  const host = $('contactList');
+  host.replaceChildren();
+
+  const phones = Array.isArray(contact.phone_numbers)
+    ? contact.phone_numbers.map(x => typeof x === 'string' ? x : (x && x.number)).filter(Boolean)
+    : (contact.phone_display ? [contact.phone_display] : []);
+
+  const whats = Array.isArray(contact.whatsapp_numbers)
+    ? contact.whatsapp_numbers.map(x => typeof x === 'string' ? x : (x && x.number)).filter(Boolean)
+    : (contact.whatsapp_number ? [contact.whatsapp_number] : []);
+
+  whatsappNumbers = whats.map(cleanPhone).filter(Boolean);
+  if (!whatsappNumbers.length && contact.whatsapp_number) {
+    whatsappNumbers = [cleanPhone(contact.whatsapp_number)];
+  }
+
+  phones.forEach((phone, i) => {
+    const item = document.createElement('div');
+    item.className = 'contact-item';
+    const icon = addText(item, 'span', '☎', 'contact-icon');
+    const content = document.createElement('div');
+    addText(content, 'b', phones.length > 1 ? ('اتصال هاتفي ' + (i + 1)) : 'اتصال هاتفي');
+    const a = addText(content, 'a', phone);
+    a.href = 'tel:' + cleanPhone(phone);
+    a.setAttribute('aria-label', 'اتصل على ' + phone);
+    item.append(content);
+    icon.setAttribute('aria-hidden', 'true');
+    item.addEventListener('click', e => {
+      if (e.target.tagName !== 'A') location.href = 'tel:' + cleanPhone(phone);
+    });
+    host.append(item);
+  });
+
+  whats.forEach((phone, i) => {
+    const item = document.createElement('div');
+    item.className = 'contact-item whatsapp';
+    addText(item, 'span', '◉', 'contact-icon');
+    const content = document.createElement('div');
+    addText(content, 'b', whats.length > 1 ? ('واتساب ' + (i + 1)) : 'تواصل عبر واتساب');
+    const a = addText(content, 'a', phone);
+    a.href = 'https://wa.me/' + cleanPhone(phone);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    item.append(content);
+    host.append(item);
+  });
+
+  if (contact.email) {
+    const item = document.createElement('div');
+    item
