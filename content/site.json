@@ -42,7 +42,23 @@
   "about_summary": "مهندس مدني مهتم بتقديم حلول عملية واضحة، مع الاهتمام بالتفاصيل الفنية والتنسيق بين التصميم ومتطلبات التنفيذ.",
   "location": "ذمار – اليمن",
   "engineering_logo": "/images/uploads/1000159008.png",
-  "projects": [],
+  "projects": [
+    {
+      "title": "مبنى",
+      "category": "إنشائي",
+      "description": "مبنى سكني",
+      "image": "/images/uploads/1000159008.png",
+      "gallery": [
+        {
+          "image": "/images/uploads/1000159008.png",
+          "caption": "شعارنا "
+        }
+      ],
+      "pdf_files": [
+        "/content/files/projects/pdf/الخزان-الأرضي.pdf"
+      ]
+    }
+  ],
   "personal_image": "/images/uploads/1000011901.jpg",
   "services": [
     {
