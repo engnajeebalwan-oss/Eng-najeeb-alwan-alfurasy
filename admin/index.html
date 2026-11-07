@@ -5,51 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#142536">
-  <title>إدارة الموقع | المهندس نجيب الفراصي</title>
+  <title>لوحة التحكم | إدارة المحتوى والمشاريع</title>
   <style>
-    #image-picker-note {
+    /* تحسين توافق لوحة التحكم مع الهاتف المحمول */
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    #mobile-picker-tip {
       position: fixed;
       z-index: 2147483000;
       right: 16px;
       bottom: 16px;
-      max-width: min(360px, calc(100vw - 32px));
+      max-width: min(340px, calc(100vw - 32px));
       padding: 10px 14px;
-      border-radius: 9px;
+      border-radius: 8px;
       background: #142536;
       color: #fff;
-      box-shadow: 0 4px 18px #0004;
-      font: 13px/1.7 Tahoma, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       display: none;
     }
-    #image-picker-note strong { color: #f0c66b; }
   </style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <div id="mobile-picker-tip">يمكنك اختيار الصور والملفات مباشرة من ذاكرة الهاتف أو معرض الصور.</div>
 
-  <div id="image-picker-note" role="status" aria-live="polite">
-    <strong>اختيار صورة:</strong>
-    في مكتبة الوسائط اختر «رفع» للوصول إلى خيارات الصور والملفات التي يتيحها جهازك.
-  </div>
+  <!-- Decap CMS Core -->
+  <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
 
   <script>
-  (function () {
-    'use strict';
-    var note = document.getElementById('image-picker-note');
-    var noteTimer = null;
+    // ترويض مدخلات الملفات لتسمح بالتقاط واختيار الملفات من معرض الهاتف بدون احتجاز على الكاميرا
+    document.addEventListener('change', function(e) {
+      if (e.target && e.target.type === 'file') {
+        e.target.removeAttribute('capture');
+      }
+    }, true);
 
+    // مراقبة النقر على زر الرفع لتنبيه المستخدم
     document.addEventListener('click', function (event) {
       var input = event.target;
-      if (!input || input.tagName !== 'INPUT' || input.type !== 'file') return;
-      var accept = (input.getAttribute('accept') || '').toLowerCase();
-      if (accept.indexOf('image/') === -1 && !/\.(jpe?g|png|gif|webp|bmp|tiff?|avif|heic|heif|svg)/i.test(accept)) return;
-      note.style.display = 'block';
-      if (noteTimer) window.clearTimeout(noteTimer);
-      noteTimer = window.setTimeout(function () {
-        note.style.display = 'none';
-      }, 6500);
+      if (input && input.tagName === 'INPUT' && input.type === 'file') {
+        var tip = document.getElementById('mobile-picker-tip');
+        tip.style.display = 'block';
+        setTimeout(function () { tip.style.display = 'none'; }, 4000);
+      }
     }, true);
-  })();
   </script>
 </body>
 </html>
