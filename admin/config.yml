@@ -10,19 +10,26 @@ site_url: https://engnajeeb.netlify.app
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+# ضبط مكتبة الوسائط لتقبل كل أنواع الصور وسلاسة التصفح من الهاتف
+media_library:
+  max_file_size: 52428800 # 50MB للمخططات وملفات الـ CAD الكبيرة
+
 collections:
   - name: "site"
     label: "إدارة الموقع"
+    delete: false
+    editor:
+      preview: false
     files:
       - name: "main"
-        label: "المحتوى الرئيسي"
+        label: "المحتوى الرئيسي والمشاريع"
         file: "content/site.json"
         format: "json"
         fields:
-          - { label: "الاسم المهني", name: "name", widget: "string" }
+          - { label: "الاسم المهني", name: "name", widget: "string", required: false }
           - { label: "عنوان الموقع", name: "site_title", widget: "string", required: false }
-          - { label: "الصورة الشخصية", name: "personal_image", widget: "image", required: false }
-          - { label: "الشعار الهندسي", name: "engineering_logo", widget: "image", required: false }
+          - { label: "الصورة الشخصية", name: "personal_image", widget: "image", required: false, choose_url: false }
+          - { label: "الشعار الهندسي", name: "engineering_logo", widget: "image", required: false, choose_url: false }
           - { label: "العبارة التعريفية", name: "eyebrow", widget: "string", required: false }
           - { label: "نبذة الواجهة الرئيسية", name: "hero_intro", widget: "text", required: false }
           - { label: "الموقع الجغرافي", name: "location", widget: "string", required: false }
@@ -52,69 +59,59 @@ collections:
             required: false
             summary: "{{fields.title}}"
             fields:
-              - { label: "الأيقونة", name: "icon", widget: "string", required: false }
-              - { label: "اسم الخدمة", name: "title", widget: "string" }
+              - { label: "الأيقونة (رمز أو فئة)", name: "icon", widget: "string", required: false }
+              - { label: "اسم الخدمة", name: "title", widget: "string", required: false }
               - { label: "وصف الخدمة", name: "description", widget: "text", required: false }
 
-          - label: "المشاريع والأعمال"
+          - label: "المشاريع والأعمال (إضافة وتعديل وحذف)"
             name: "projects"
             widget: "list"
             required: false
-            summary: "{{fields.title}}"
+            summary: "{{fields.title}} - {{fields.category}}"
             fields:
               - { label: "اسم المشروع", name: "title", widget: "string", required: false }
-              - { label: "نوع العمل", name: "category", widget: "string", required: false }
-              - { label: "وصف المشروع", name: "description", widget: "text", required: false }
-              - { label: "صورة الغلاف", name: "image", widget: "image", required: false }
-              - label: "معرض الصور"
+              - { label: "نوع العمل / التصنيف", name: "category", widget: "string", required: false }
+              - { label: "وصف المشروع والتفاصيل", name: "description", widget: "text", required: false }
+              - { label: "صورة الغلاف الرئيسية", name: "image", widget: "image", required: false, choose_url: false }
+              
+              - label: "معرض صور المشروع"
                 name: "gallery"
                 widget: "list"
                 required: false
+                summary: "{{fields.caption}}"
                 fields:
-                  - { label: "الصورة", name: "image", widget: "image", required: false }
-                  - { label: "وصف الصورة", name: "caption", widget: "string", required: false }
-              - label: "ملفات PDF"
+                  - { label: "الصورة", name: "image", widget: "image", required: false, choose_url: false }
+                  - { label: "وصف أو تعليق الصورة", name: "caption", widget: "string", required: false }
+
+              - label: "ملفات المخططات PDF"
                 name: "pdf_files"
                 widget: "list"
                 required: false
-                field:
-                  label: "ملف PDF"
-                  name: "file"
-                  widget: "file"
-                  required: false
-                  media_folder: "files/projects/pdf"
-                  public_folder: "/content/files/projects/pdf"
+                fields:
+                  - { label: "عنوان الملف", name: "title", widget: "string", required: false }
+                  - { label: "ملف PDF", name: "file", widget: "file", required: false, media_folder: "files/projects/pdf", public_folder: "/content/files/projects/pdf", choose_url: false }
+
               - label: "معاينات CAD بصيغة PDF"
                 name: "cad_preview_files"
                 widget: "list"
                 required: false
-                field:
-                  label: "ملف المعاينة"
-                  name: "file"
-                  widget: "file"
-                  required: false
-                  media_folder: "files/projects/cad-previews"
-                  public_folder: "/content/files/projects/cad-previews"
-              - label: "ملفات AutoCAD الأصلية DWG وDXF"
+                fields:
+                  - { label: "عنوان المعاينة", name: "title", widget: "string", required: false }
+                  - { label: "ملف المعاينة", name: "file", widget: "file", required: false, media_folder: "files/projects/cad-previews", public_folder: "/content/files/projects/cad-previews", choose_url: false }
+
+              - label: "ملفات AutoCAD الأصلية (DWG / DXF)"
                 name: "cad_files"
                 widget: "list"
                 required: false
-                field:
-                  label: "ملف AutoCAD"
-                  name: "file"
-                  widget: "file"
-                  required: false
-                  media_folder: "files/projects/cad"
-                  public_folder: "/content/files/projects/cad"
+                fields:
+                  - { label: "اسم المخطط الأصلي", name: "title", widget: "string", required: false }
+                  - { label: "ملف CAD", name: "file", widget: "file", required: false, media_folder: "files/projects/cad", public_folder: "/content/files/projects/cad", choose_url: false }
 
-          - label: "البرامج الهندسية"
+          - label: "البرامج والخبرات الهندسية"
             name: "software"
             widget: "list"
             required: false
-            field:
-              label: "اسم البرنامج"
-              name: "software_name"
-              widget: "string"
+            field: { label: "اسم البرنامج", name: "software_name", widget: "string", required: false }
 
           - label: "بيانات التواصل"
             name: "contact"
@@ -122,16 +119,16 @@ collections:
             required: false
             fields:
               - { label: "البريد الإلكتروني", name: "email", widget: "string", required: false }
-              - label: "أرقام الهاتف (+ للإضافة و - للحذف)"
+              - label: "أرقام الهاتف"
                 name: "phone_numbers"
                 widget: "list"
                 required: false
-                field: { label: "رقم الهاتف", name: "number", widget: "string" }
+                field: { label: "رقم الهاتف", name: "number", widget: "string", required: false }
               - label: "أرقام واتساب"
                 name: "whatsapp_numbers"
                 widget: "list"
                 required: false
-                field: { label: "رقم واتساب مع مفتاح الدولة", name: "number", widget: "string" }
+                field: { label: "رقم واتساب مع مفتاح الدولة", name: "number", widget: "string", required: false }
               - { label: "رقم الهاتف القديم للتوافق", name: "phone_display", widget: "string", required: false }
               - { label: "رقم واتساب القديم للتوافق", name: "whatsapp_number", widget: "string", required: false }
 
@@ -171,5 +168,5 @@ collections:
             required: false
             summary: "{{fields.title}}"
             fields:
-              - { label: "عنوان القسم", name: "title", widget: "string" }
+              - { label: "عنوان القسم", name: "title", widget: "string", required: false }
               - { label: "محتوى القسم", name: "body", widget: "text", required: false }
